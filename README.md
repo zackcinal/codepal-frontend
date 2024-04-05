@@ -52,7 +52,8 @@ This project is licensed under the [MIT License](LICENSE).
 
 ERD
 
-![image](https://github.com/zackcinal/codepal-frontend/assets/90149052/b39fd732-3217-48af-bd04-1140a43b08bc)
+![image](https://github.com/zackcinal/codepal-frontend/assets/90149052/9254a3b0-8a6c-4239-b771-0d90782ff379)
+
 
 Component Hierachy 
 

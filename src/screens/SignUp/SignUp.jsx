@@ -6,9 +6,11 @@ function Register({ setUser }) {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    username: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
+    is_developer: "",
     isError: false,
     errorMsg: "",
   });
@@ -35,9 +37,10 @@ function Register({ setUser }) {
       setForm((prevForm) => ({
         isError: true,
         errorMsg: "Invalid Credentials",
-        username: prevForm.username,
-        email: "",
+        email: "prevForm.email",
         password: "",
+        first_name:"",
+        last_name:"",
       }));
     }
   };
@@ -63,7 +66,25 @@ function Register({ setUser }) {
       </div>
       <div>
         <form className="home-form" onSubmit={handleSubmit}>
-          <h1>Register</h1>
+          <h1>Sign Up</h1>
+          <input
+            type='first_name'
+            name='first_name'
+            value={form.first_name}
+            placeholder='Enter Your First Name'
+            onChange={handleChange}
+            required
+            autoComplete="off"
+          />
+             <input
+            type='last_name'
+            name='last_name'
+            value={form.last_name}
+            placeholder='Enter Your Last Name'
+            onChange={handleChange}
+            required
+            autoComplete="off"
+          />
           <input
             type='email'
             name='email'
@@ -73,11 +94,32 @@ function Register({ setUser }) {
             required
             autoComplete="off"
           />
-          <input
+  
+           <input
             type='password'
             name='password'
             value={form.password}
             placeholder='Enter Password'
+            onChange={handleChange}
+            required
+            autoComplete="off"
+          />
+        
+           <input
+            type='password'
+            name='password'
+            value={form.password}
+            placeholder='Confirm Password'
+            onChange={handleChange}
+            required
+            autoComplete="off"
+          />
+          Are you a developer?
+             <input
+            type='checkbox'
+            name='is_developer'
+            value={form.is_developer}
+            placeholder= "hello"
             onChange={handleChange}
             required
             autoComplete="off"

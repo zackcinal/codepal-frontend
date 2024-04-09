@@ -3,7 +3,7 @@ import "./MainPage.css"
 
 function MainPage() {
   return (
-    <div>MainPage</div>
+    <div className='mainPageContainer'>MainPage</div>
   )
 }
 

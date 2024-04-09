@@ -10,6 +10,8 @@
     padding: 0 2vh;
     position: absolute;
     top: 0;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
+    z-index: 9999;
 }
 
 .navbarBtn{
@@ -23,6 +25,7 @@
     height: 100%;
     margin: 0 3vh;
     font-size: 20px; 
+    border-radius: 5px;
 }
 
 .navbarBtn:hover{

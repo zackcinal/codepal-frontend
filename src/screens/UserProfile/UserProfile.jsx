@@ -3,7 +3,8 @@ import "./UserProfile.css"
 
 function UserProfile() {
   return (
-    <div>UserProfile</div>
+    <div className='userProfileContainer'>
+      UserProfile</div>
   )
 }
 

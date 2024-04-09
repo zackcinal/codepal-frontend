@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signIn } from "../../services/users.js";
+import "./SignIn.css"
 
 
 function SignIN({ setUser }) {
@@ -56,12 +57,12 @@ function SignIN({ setUser }) {
   };
 
   return (
-    <div className="home-container">
+    <div className="signinContainer">
       <div>
         
       </div>
       <div>
-        <form className="home-form" onSubmit={handleSubmit}>
+        <form className="homeForm" onSubmit={handleSubmit}>
           <h1>Login</h1>
           <input
             type='text'

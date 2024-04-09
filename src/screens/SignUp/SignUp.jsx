@@ -7,9 +7,11 @@ function Register({ setUser }) {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    username: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
+    is_developer: "",
     isError: false,
     errorMsg: "",
   });
@@ -36,9 +38,10 @@ function Register({ setUser }) {
       setForm((prevForm) => ({
         isError: true,
         errorMsg: "Invalid Credentials",
-        username: prevForm.username,
-        email: "",
+        email: "prevForm.email",
         password: "",
+        first_name:"",
+        last_name:"",
       }));
     }
   };
@@ -53,18 +56,38 @@ function Register({ setUser }) {
         </button>
       );
     } else {
-      return <button type="submit">Register</button>;
+      return <button type="submit">Join Us</button>;
     }
   };
 
   return (
     <div className="sigupContainer">
-      <div>
-   
-      </div>
-      <div>
+     
+      <div className="signUpForm">
         <form className="homeForm" onSubmit={handleSubmit}>
-          <h1>Register</h1>
+
+          <h1 className="signUpHeader">Sign Up</h1>
+          <input
+            type='first_name'
+            name='first_name'
+            value={form.first_name}
+            placeholder='Enter Your First Name'
+            onChange={handleChange}
+            required
+            autoComplete="off"
+            className="sigupInput"
+          />
+             <input
+            type='last_name'
+            name='last_name'
+            value={form.last_name}
+            placeholder='Enter Your Last Name'
+            onChange={handleChange}
+            required
+            autoComplete="off"
+            className="sigupInput"
+          />
+
           <input
             type='email'
             name='email'
@@ -73,8 +96,10 @@ function Register({ setUser }) {
             onChange={handleChange}
             required
             autoComplete="off"
+            className="sigupInput"
           />
-          <input
+  
+           <input
             type='password'
             name='password'
             value={form.password}
@@ -82,7 +107,32 @@ function Register({ setUser }) {
             onChange={handleChange}
             required
             autoComplete="off"
+            className="sigupInput"
           />
+        
+           <input
+            type='password'
+            name='password'
+            value={form.password}
+            placeholder='Confirm Password'
+            onChange={handleChange}
+            required
+            autoComplete="off"
+            className="sigupInput"
+          />
+          <div className="signUpCheckbox">
+          <p>Are you a developer?</p>
+             <input
+            type='checkbox'
+            name='is_developer'
+            value={form.is_developer}
+            placeholder= "hello"
+            onChange={handleChange}
+            required
+            autoComplete="off"
+            className="sigupInput"
+          />
+          </div>
       
 
           {renderError()}

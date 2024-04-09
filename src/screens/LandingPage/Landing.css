@@ -1,0 +1,52 @@
+.landingPageContainer{
+    width: 100%;
+    height: 100%;
+    padding: 10vh 0 0 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: scroll;
+    background: url(../../assets/wallPaper.png);
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: center;
+    background-blend-mode: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.landingPageTitle{
+    font-size: 30vh;
+    padding: 0;
+    margin: 0;
+}
+
+.landingPageDetail{
+    font-size: 10vh;
+    padding: 0;
+    margin: 0;
+}
+
+.landingPageBtn{
+    font-size: 5vh;
+    padding: 0;
+    margin: 0;
+    background-color: #30ab65;
+    border: transparent;
+    border: 0;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
+    color: white;
+    transition: 0.2s ease-in-out;
+    height: 10vh;
+    aspect-ratio: 2/1;
+
+}
+
+.landingPageBtn:hover{
+    background-color: #28fb6b;
+    color: black;
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+

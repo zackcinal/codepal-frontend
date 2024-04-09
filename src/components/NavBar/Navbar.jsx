@@ -9,7 +9,7 @@ function Navbar() {
     <div className='navbarContainer'>
       <button 
       onClick={() => {
-        navigate("/home");
+        navigate("/");
       }}
       className='navbarBtn'>code.Pal</button>
       <div className='navbarOptions'>

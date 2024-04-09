@@ -60,12 +60,12 @@ function Register({ setUser }) {
   };
 
   return (
-    <div className="home-container">
+    <div className="homeContainer">
       <div>
    
       </div>
       <div>
-        <form className="home-form" onSubmit={handleSubmit}>
+        <form className="homeForm" onSubmit={handleSubmit}>
           <h1>Sign Up</h1>
           <input
             type='first_name'

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signUp } from "../../services/users.js";
+import './SignUp.css'
 
 function Register({ setUser }) {
   const navigate = useNavigate();
@@ -57,12 +58,12 @@ function Register({ setUser }) {
   };
 
   return (
-    <div className="home-container">
+    <div className="sigupContainer">
       <div>
    
       </div>
       <div>
-        <form className="home-form" onSubmit={handleSubmit}>
+        <form className="homeForm" onSubmit={handleSubmit}>
           <h1>Register</h1>
           <input
             type='email'

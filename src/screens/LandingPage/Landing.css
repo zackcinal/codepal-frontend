@@ -40,12 +40,13 @@
     transition: 0.2s ease-in-out;
     height: 10vh;
     aspect-ratio: 2/1;
+    border-radius: 10px;
 
 }
 
 .landingPageBtn:hover{
-    background-color: #28fb6b;
-    color: black;
+    background-color: rgb(19, 33, 111);
+    color: white;
     transform: scale(1.1);
     transition: transform 0.2s ease-in-out;
 }

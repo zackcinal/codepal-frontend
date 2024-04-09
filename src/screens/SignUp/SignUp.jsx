@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signUp } from "../../services/users.js";
+import './SignUp.css'
 
 function Register({ setUser }) {
   const navigate = useNavigate();
@@ -60,12 +61,13 @@ function Register({ setUser }) {
   };
 
   return (
-    <div className="homeContainer">
+    <div className="sigupContainer">
       <div>
    
       </div>
       <div>
         <form className="homeForm" onSubmit={handleSubmit}>
+
           <h1>Sign Up</h1>
           <input
             type='first_name'
@@ -85,6 +87,7 @@ function Register({ setUser }) {
             required
             autoComplete="off"
           />
+
           <input
             type='email'
             name='email'

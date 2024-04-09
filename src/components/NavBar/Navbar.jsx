@@ -1,9 +1,23 @@
 import React from 'react'
 import "./Navbar.css"
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate();  
   return (
-    <div>Navbar</div>
+
+    <div className='navbarContainer'>
+      <button 
+      onClick={() => {
+        navigate("/home");
+      }}
+      className='navbarBtn'>code.Pal</button>
+      <div className='navbarOptions'>
+        <button className='navbarBtn'>Login</button>
+        <button className='navbarBtn'>Signup</button>
+        <button className='navbarBtn'>Help</button>
+      </div>
+    </div>
   )
 }
 

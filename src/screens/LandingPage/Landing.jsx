@@ -7,7 +7,7 @@ function Landing() {
   return (
     <div className='landingPageContainer'>
       <h1 className='landingPageTitle'>code.Pal</h1>
-      <h2 className='landingPageDescription'>this is our project description</h2>
+      <h2 className='landingPageDescription'>Welcome to our React App for hiring developers! This platform serves as a hub for both developers seeking opportunities and clients looking to hire skilled professionals. Please use this hub as a platform to showcase your talent.</h2>
       <button 
       onClick={() => {
         navigate("/home");

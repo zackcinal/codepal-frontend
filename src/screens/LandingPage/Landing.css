@@ -28,6 +28,12 @@
     margin: 0;
 }
 
+.landingPageDescription{
+    width: 60vw;
+    text-align: justify;
+    font-weight: 400;
+}
+
 .landingPageBtn{
     font-size: 5vh;
     padding: 0;

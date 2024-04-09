@@ -29,7 +29,7 @@ function Register({ setUser }) {
       const userData = await signUp(form);
       setUser(userData);
 
-      navigate("/cats");
+      navigate("/home");
     } catch (error) {
       console.error(error);
       setForm((prevForm) => ({
@@ -65,10 +65,10 @@ function Register({ setUser }) {
         <form className="home-form" onSubmit={handleSubmit}>
           <h1>Register</h1>
           <input
-            type='text'
-            name='username'
-            value={form.username}
-            placeholder='Enter Username'
+            type='email'
+            name='email'
+            value={form.email}
+            placeholder='Enter Email'
             onChange={handleChange}
             required
             autoComplete="off"
@@ -82,6 +82,7 @@ function Register({ setUser }) {
             required
             autoComplete="off"
           />
+      
 
           {renderError()}
         </form>

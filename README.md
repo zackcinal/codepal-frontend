@@ -52,7 +52,8 @@ This project is licensed under the [MIT License](LICENSE).
 
 ERD
 
-![image](https://github.com/zackcinal/codepal-frontend/assets/90149052/f4e01c91-fa7a-4a0e-bafd-212388dfe6b0)
+![image](https://github.com/zackcinal/codepal-frontend/assets/90149052/7b309b2c-188c-4423-b43e-45a662e70f64)
+
 
 
 

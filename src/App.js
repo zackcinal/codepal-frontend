@@ -40,14 +40,14 @@ function App() {
     <div className="App">
       <Navbar user={user} handleLogin={handleLogin} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing setUser={setUser} />} />
-        <Route path="/home" element={<MainPage setUser={setUser} />} />
-        <Route path="/userprofile" element={<UserProfile setUser={setUser} />} />
-        <Route path="/editprofile" element={<EditUser setUser={setUser} />} />
-        <Route path="/help" element={<AboutUs setUser={setUser} />} />
-        <Route path="/signup" element={<SignUp setUser={setUser} />} />
-        <Route path="/signin" element={<SignIn setUser={setUser} />} />
-        <Route path="/editreview" element={<EditReview setUser={setUser} />} />
+      <Route path="/" element={<Landing setUser={setUser} />} />
+      <Route path="/home" element={<MainPage setUser={setUser} />} />
+      <Route path="/userprofile" element={<UserProfile setUser={setUser} />} />
+      <Route path="/editprofile" element={<EditUser setUser={setUser} />} />
+      <Route path="/editreview" element={<EditReview setUser={setUser} />} />
+      <Route path="/help" element={<AboutUs setUser={setUser} />} />
+      <Route path="/signup" element={<SignUp setUser={setUser} />} />
+      <Route path="/signin" element={<SignIn setUser={setUser} />} />
       </Routes>
     </div>
   );

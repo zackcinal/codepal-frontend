@@ -8,7 +8,7 @@ function MainPage() {
     <div className='mainPageContainer'>
       <div className='profilesContainer'></div>
       <Footer />
-      </div>
+    </div>
   )
 }
 

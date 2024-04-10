@@ -3,7 +3,7 @@ import './EditUser.css'
 
 function EditUser() {
   return (
-    <div className='editUserContainer'>EditUser</div>
+    <div className='editUserContainer'></div>
   )
 }
 

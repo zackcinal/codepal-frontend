@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signIn } from "../../services/users.js";
-import "./SignIn.css"
-
+import "./SignIn.css";
+import Navbar from "../../components/NavBar/Navbar.jsx";
 
 function SignIn({ setUser }) {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ function SignIn({ setUser }) {
       const userData = await signIn(form);
       setUser(userData);
 
-      navigate("/cats");
+      navigate("/home");
     } catch (error) {
       console.error(error);
       setForm((prevForm) => ({
@@ -58,38 +58,36 @@ function SignIn({ setUser }) {
 
   return (
     <div className="signinContainer">
-      <div>
-        
-      </div>
-      <div>
-        <form className="homeForm" onSubmit={handleSubmit}>
-          <h1>Login</h1>
-          <input
-            type='text'
-            name='username'
-            value={form.username}
-            placeholder='Enter Username'
-            onChange={handleChange}
-            required
-            autoComplete="off"
-          />
-          <input
-            type='password'
-            name='password'
-            value={form.password}
-            placeholder='Enter Password'
-            onChange={handleChange}
-            required
-            autoComplete="off"
-          />
+      <Navbar />
+      <form className="homeFormSignIn" onSubmit={handleSubmit}>
+        <h1>SIGN IN</h1>
+        <label>USERNAME</label>
+        <input
+          type="text"
+          name="username"
+          value={form.username}
+          placeholder="Enter Username"
+          onChange={handleChange}
+          required
+          autoComplete="off"
+        />
+        <label>PASSWORD</label>
+        <input
+          type="password"
+          name="password"
+          value={form.password}
+          placeholder="Enter Password"
+          onChange={handleChange}
+          required
+          autoComplete="off"
+        />
 
-          {renderError()}
+        {renderError()}
 
-          <Link to="/register">
-            <p>No account? Sign up here!</p>
-          </Link>
-        </form>
-      </div>
+        <Link to="/signup">
+          <p>No account? Sign up here!</p>
+        </Link>
+      </form>
     </div>
   );
 }

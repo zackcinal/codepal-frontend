@@ -4,7 +4,7 @@ import { signIn } from "../../services/users.js";
 import "./SignIn.css"
 
 
-function SignIN({ setUser }) {
+function SignIn({ setUser }) {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -94,4 +94,4 @@ function SignIN({ setUser }) {
   );
 }
 
-export default SignIN;
+export default SignIn;

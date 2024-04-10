@@ -1,34 +1,14 @@
 import React from 'react'
 import "./MainPage.css"
+import Footer from '../../components/Footer/Footer'
+
 
 function MainPage() {
   return (
     <div className='mainPageContainer'>
-      <div className='mainPageProfileContainer'>
-
-
+      <div className='profilesContainer'></div>
+      <Footer />
       </div>
-      <div className='mainPageScreen'>
-        <div className='mainPageOptions'>
-          <button className='mainPageOptionsBtn'>Projects</button>
-          <button className='mainPageOptionsBtn'>Reviews</button>
-          <button className='mainPageOptionsBtn'>Followers</button>
-          <button className='mainPageOptionsBtn'>Following</button>
-        </div>
-        <div className='mainPageDisplay'>
-          <div className='review'>Review</div>
-          <div className='review'>Review</div>
-          <div className='review'>Review</div>
-          <div className='review'>Review</div>
-          <div className='review'>Review</div>
-          <div className='review'>Review</div>
-          <div className='review'>Review</div>
-        </div>
-      </div>
-
-
-
-    </div>
   )
 }
 

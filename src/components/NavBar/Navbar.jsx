@@ -15,7 +15,11 @@ function Navbar() {
       <div className='navbarOptions'>
         <button className='navbarBtn'>Login</button>
         <button className='navbarBtn'>Signup</button>
-        <button className='navbarBtn'>Help</button>
+        <button 
+        onClick={() => {
+          navigate("/help");
+        }}
+        className='navbarBtn'>Help</button>
       </div>
     </div>
   )

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signUp } from "../../services/users.js";
 import "./SignUp.css";
+import Navbar from "../../components/NavBar/Navbar.jsx";
 
 const Register = (props) => {
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ const Register = (props) => {
       // Assuming setUser is a function to set user data
       // setUser(userData);
 
-      navigate("/home");
+      navigate("/signin");
     } catch (error) {
       console.error(error);
       setForm((prevForm) => ({
@@ -63,12 +64,13 @@ const Register = (props) => {
         </button>
       );
     } else {
-      return <button type="submit">Join Us</button>;
+      return <button type="submit" className="signUpButton">Join Us</button>;
     }
   };
 
   return (
     <div className="signupContainer">
+      <Navbar />
       <div className="signUpForm">
         <form className="homeForm" onSubmit={handleSubmit}>
           <h1 className="signUpHeader">Sign Up</h1>
@@ -196,7 +198,7 @@ const Register = (props) => {
               name="is_developer"
               checked={form.is_developer}
               onChange={(e) => setForm({ ...form, is_developer: e.target.checked })}
-              className="signupInput"
+              className="signupInputBox"
             />
           </div>
           {renderError()}

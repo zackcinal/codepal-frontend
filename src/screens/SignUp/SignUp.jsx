@@ -71,9 +71,9 @@ const Register = (props) => {
   return (
     <div className="signupContainer">
       <Navbar />
-      <div className="signUpForm">
-        <form className="homeForm" onSubmit={handleSubmit}>
-          <h1 className="signUpHeader">Sign Up</h1>
+      <div className="signUpFormContainer">
+        <h1 className="signUpHeader">Sign Up</h1>
+        <form className="signupForm" onSubmit={handleSubmit}>
           <input
             type="text"
             name="first_name"
@@ -144,7 +144,6 @@ const Register = (props) => {
             autoComplete="off"
             className="signupInput"
           />
-
           <input
             type="text"
             name="description"
@@ -155,7 +154,6 @@ const Register = (props) => {
             autoComplete="off"
             className="signupInput"
           />
-
           <input
             type="text"
             name="location"
@@ -166,7 +164,6 @@ const Register = (props) => {
             autoComplete="off"
             className="signupInput"
           />
-
           <input
             type="text"
             name="portfolio_link"
@@ -177,13 +174,13 @@ const Register = (props) => {
             autoComplete="off"
             className="signupInput"
           />
-
           <select
             name="role"
             value={form.role}
             onChange={handleChange}
             required
             className="signupInput"
+            placeholder="Select a role"
           >
             <option value="FS">Full Stack Developer</option>
             <option value="BE">Back End Developer</option>

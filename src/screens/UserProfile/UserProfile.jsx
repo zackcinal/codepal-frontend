@@ -1,5 +1,4 @@
 import "./UserProfile.css";
-import { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Projects from "../../components/Projects/Projects.jsx";
 import Reviews from "../../components/Reviews/Reviews.jsx";

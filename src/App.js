@@ -13,10 +13,12 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { signOut, verifyUser } from './services/users.js';
 
+
 function App() {
   const [user, setUser] = useState(null);
   const [profile, setProfile] = useState(null)
   const navigate = useNavigate();
+
 
   useEffect(() => {
     const fetchUser = async () => {

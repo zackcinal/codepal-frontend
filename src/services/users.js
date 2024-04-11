@@ -38,3 +38,21 @@ export const verifyUser = async () => {
   }
   return false;
 };
+
+export const getProfiles = async () => {
+  try {
+    const response = await api.get("/developers/");
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getProfile = async (userId) => {
+  try {
+    const response = await api.get(`/profiles/${userId}/`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

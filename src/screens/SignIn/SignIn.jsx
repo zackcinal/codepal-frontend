@@ -84,9 +84,12 @@ function SignIn({ setUser }) {
 
         {renderError()}
 
-        <Link to="/signup">
-          <p>No account? Sign up here!</p>
-        </Link>
+        <div className="singUpLink">
+          <p className="signUpP">No account?</p>
+          <Link className="linkSignUp" to="/signup">
+            Sign up here!
+          </Link>
+        </div>
       </form>
     </div>
   );

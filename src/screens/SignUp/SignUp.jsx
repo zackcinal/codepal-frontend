@@ -135,7 +135,7 @@ const Register = (props) => {
             className="signupInput"
           />
           <input
-            type="text"
+            type="file"
             name="profile_picture"
             value={form.profile_picture}
             placeholder="Enter Profile Picture URL"

@@ -39,3 +39,29 @@
     font-size: large;
     font-weight: 600;
 }
+
+.singUpLink{
+    text-align: center;
+
+}
+
+
+
+.signUpP{
+    margin-top: 20px;
+}
+
+
+.linkSignUp{
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+
+.linkSignUp:hover {
+    transform: scale(1.5); 
+    font-weight: bold; 
+    background-color: lightgray; 
+}
+

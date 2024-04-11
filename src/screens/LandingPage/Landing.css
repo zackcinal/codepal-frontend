@@ -45,8 +45,8 @@
     margin-bottom: 5%;
     color: rgb(255, 255, 255);
     padding: 1%;
-    text-shadow: rgb(0, 0, 0) 5px;
-    border-radius: 3%;
+    text-shadow: rgb(0, 0 0) 5px;
+    border-radius: 10px;
     background-color: rgba(19, 33, 111, 0.88);
 }
 

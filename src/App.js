@@ -1,53 +1,52 @@
 import './App.css';
-import { signIn, signOut, verifyUser } from './services/users.js';
-import { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import AboutUs from './screens/AboutUs/AboutUs.jsx';
-import EditUser from './screens/EditUser/EditUser.jsx';
-import EditReview from './screens/EditReview/EditReview.jsx';
-import Landing from './screens/LandingPage/Landing.jsx';
-import MainPage from './screens/MainPage/MainPage.jsx';
+import Navbar from './components/NavBar/Navbar.jsx';
 import SignIn from './screens/SignIn/SignIn.jsx';
 import SignUp from './screens/SignUp/SignUp.jsx';
+import AboutUs from './screens/AboutUs/AboutUs.jsx';
+import Landing from './screens/LandingPage/Landing.jsx';
+import EditUser from './screens/EditUser/EditUser.jsx';
+import MainPage from './screens/MainPage/MainPage.jsx';
+import EditReview from './screens/EditReview/EditReview.jsx';
 import UserProfile from './screens/UserProfile/UserProfile.jsx';
-import Navbar from './components/NavBar/Navbar.jsx';
+import { getProfile } from './services/profile.js'
+import { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { signOut, verifyUser } from './services/users.js';
 
 function App() {
   const [user, setUser] = useState(null);
+  const [profile, setProfile] = useState(null)
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUser = async () => {
       const fetchedUser = await verifyUser();
-      setUser(fetchedUser);
+      setUser(fetchedUser.user);
+      setProfile(fetchedUser.profile);
     };
 
     fetchUser();
   }, []);
 
-  const handleLogin = async (credentials) => {
-    const user = await signIn(credentials);
-    setUser(user);
-  };
-
   const handleLogout = async () => {
     await signOut(); 
     setUser(null);
+    setProfile(null);
     navigate("/signin");
   };
 
   return (
     <div className="App">
-      <Navbar user={user} handleLogin={handleLogin} handleLogout={handleLogout} />
+      <Navbar user={user} handleLogout={handleLogout} />
       <Routes>
-      <Route path="/" element={<Landing setUser={setUser} />} />
-      <Route path="/home" element={<MainPage setUser={setUser} />} />
-      <Route path="/userprofile" element={<UserProfile setUser={setUser} />} />
-      <Route path="/editprofile" element={<EditUser setUser={setUser} />} />
-      <Route path="/editreview" element={<EditReview setUser={setUser} />} />
-      <Route path="/help" element={<AboutUs setUser={setUser} />} />
-      <Route path="/signup" element={<SignUp setUser={setUser} />} />
-      <Route path="/signin" element={<SignIn setUser={setUser} />} />
+      <Route path="/" element={<Landing setUser={setUser} user={user} />} />
+      <Route path="/home" element={<MainPage setUser={setUser} user={user}/>} />
+      <Route path="/userprofile" element={<UserProfile setUser={setUser} user={user} profile={profile} />} />
+      <Route path="/editprofile" element={<EditUser setUser={setUser} user={user}/>} />
+      <Route path="/editreview" element={<EditReview setUser={setUser} user={user}/>} />
+      <Route path="/help" element={<AboutUs setUser={setUser} user={user}/>} />
+      <Route path="/signup" element={<SignUp setUser={setUser} user={user}/>} />
+      <Route path="/signin" element={<SignIn setUser={setUser} setProfile={setProfile} />} />
       </Routes>
     </div>
   );

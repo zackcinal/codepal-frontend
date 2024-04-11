@@ -1,116 +1,117 @@
-.userProfilePageContainer{
-    width: 100vw;
-    height: 100vh;
-    padding: 10vh 0 0 0;
-    margin: 0;
-    box-sizing: border-box;
-    overflow: scroll;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    flex-direction: row;
+.userProfilePageContainer {
+  width: 100vw;
+  height: 100vh;
+  padding: 10vh 0 0 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: scroll;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: row;
 }
 
-.userProfilePageProfileContainer{
-    height: 100%;
-    width: 30vw;
-    background-color: rgba(128, 128, 128, 0.107);
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 1vh;
-    box-shadow: 7px 7px 5px rgba(128, 128, 128, 0.18);
-    z-index: 2;
+.userProfilePageProfileContainer {
+  height: 100%;
+  width: 30vw;
+  background-color: rgba(128, 128, 128, 0.107);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 1vh;
+  box-shadow: 7px 7px 5px rgba(128, 128, 128, 0.18);
+  z-index: 2;
 }
 
-.userProfilePageProfileContainer img{
-    height: 35%;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    border: 0.5vh solid white;
-    background-color: black;
-    margin: 2vh;
-    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
+.userProfilePageProfileContainer img {
+  height: 35%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 0.5vh solid white;
+  background-color: black;
+  margin: 2vh;
+  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
 }
 
-.userProfilePageContainer h1, h2, h3, h5{
-    margin: 0;
-    padding: 0;
+.userProfilePageContainer h1,
+h2,
+h3,
+h5 {
+  margin: 0;
+  padding: 0;
 }
 
-.followBtn{
-    font-size: 3vh;
-    padding: 0;
-    margin: 2vh;
-    background-color: #30ab65;
-    /* border: white;
+.followBtn {
+  font-size: 3vh;
+  padding: 0;
+  margin: 2vh;
+  background-color: #30ab65;
+  /* border: white;
     border: 0; */
-    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
-    color: white;
-    transition: 0.2s ease-in-out;
-    height: 6vh;
-    aspect-ratio: 2.5/1;
-    border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
+  color: white;
+  transition: 0.2s ease-in-out;
+  height: 6vh;
+  aspect-ratio: 2.5/1;
+  border-radius: 10px;
 }
 
-.followBtn:hover{
-    background-color: rgb(19, 33, 111);
-    color: white;
-    transform: scale(1.05);
-    transition: transform 0.2s ease-in-out;
+.followBtn:hover {
+  background-color: rgb(19, 33, 111);
+  color: white;
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
 }
 
-.userProfilePageScreen{
-    width: 70vw;
-    height: 100%;
-    background-color: white;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
+.userProfilePageScreen {
+  width: 70vw;
+  height: 100%;
+  background-color: white;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
 }
 
-.userProfilePageOptions{
-    height: 6vh;
-    width: 65vw;
-    border-bottom: 0.5vh solid rgba(128, 128, 128, 0.68);
-    display: flex;
-    box-sizing: border-box;
-    padding: 0 0 2vh 0;
-    align-items: end;
-    justify-content: center;
-    justify-content: space-around;
-    margin-bottom: 2vh;
-    list-style-type: none;
+.userProfilePageOptions {
+  height: 6vh;
+  width: 65vw;
+  border-bottom: 0.5vh solid rgba(128, 128, 128, 0.68);
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 0 2vh 0;
+  align-items: end;
+  justify-content: center;
+  justify-content: space-around;
+  margin-bottom: 2vh;
+  list-style-type: none;
 }
 
-.userProfilePageOptionsBtn{
-    background-color: transparent;
-    border: transparent;
-    padding: 0;
-    margin: 0;
-    transition: transform 0.2s ease-in-out;    
+.userProfilePageOptionsBtn {
+  background-color: transparent;
+  border: transparent;
+  padding: 0;
+  margin: 0;
+  transition: transform 0.2s ease-in-out;
 }
 
-.userProfilePageOptionsBtn:hover{
-    transform: scale(1.1);
-    transition: transform 0.2s ease-in-out;
-    border-bottom: 0.3vh solid rgb(19, 33, 111);
+.userProfilePageOptionsBtn:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+  border-bottom: 0.3vh solid rgb(19, 33, 111);
 }
 
-.userProfilePageDisplay{
-    background-color: yellow;
-    width: 65vw;
-    height: 78vh;
+.userProfilePageDisplay {
+  width: 65vw;
+  height: 78vh;
 }
 
-.review{
-    width: 100%;
-    height: 20vh;
-    margin-bottom: 3vh;
-    background-color: yellow;
+.review {
+  width: 100%;
+  height: 20vh;
+  margin-bottom: 3vh;
 }

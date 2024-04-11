@@ -4,7 +4,7 @@ export const signUp = async (credentials) => {
   try {
     const resp = await api.post("/users/register/", credentials);
     localStorage.setItem("token", resp.data.access);
-    return resp.data.user;
+    return resp.data;
   } catch (error) {
     throw error;
   }
@@ -14,7 +14,7 @@ export const signIn = async (credentials) => {
   try {
     const resp = await api.post("/users/login/", credentials);
     localStorage.setItem("token", resp.data.access);
-    return resp.data.user;
+    return resp.data;
   } catch (error) {
     throw error;
   }
@@ -34,7 +34,7 @@ export const verifyUser = async () => {
   if (token) {
     const resp = await api.get("/users/token/refresh/");
     localStorage.setItem("token", resp.data.access);
-    return resp.data.user;
+    return resp.data;
   }
   return false;
 };

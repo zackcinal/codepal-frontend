@@ -2,7 +2,7 @@ import React from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 
-function Navbar({ user, handleLogin, handleLogout }) {
+function Navbar({ user, handleLogout }) {
   const navigate = useNavigate();
 
   const navbarBtn = () => {

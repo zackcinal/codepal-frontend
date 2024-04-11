@@ -10,6 +10,17 @@ export const signUp = async (credentials) => {
   }
 };
 
+
+// export const updateUser = async (credentials) => {
+//   try {
+//     const resp = await api.post("/users/update/", credentials);
+//     localStorage.setItem("token", resp.data.access);
+//     return resp.data;
+//   } catch (error) {
+//     throw error;
+//   }
+// };
+
 export const signIn = async (credentials) => {
   try {
     const resp = await api.post("/users/login/", credentials);

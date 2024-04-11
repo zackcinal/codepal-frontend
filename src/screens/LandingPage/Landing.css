@@ -5,7 +5,7 @@
     margin: 0;
     box-sizing: border-box;
     overflow: scroll;
-    background: url(../../assets/wallPaper.png);
+    background: url(../../assets/wallpaperTest.jpg);
     background-repeat: no-repeat;
     background-size: 120%;
     background-position: center;
@@ -14,6 +14,16 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    animation: moveBackground 30s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 .landingPageTitle{
@@ -32,6 +42,12 @@
     width: 60vw;
     text-align: justify;
     font-weight: 400;
+    margin-bottom: 5%;
+    color: rgb(255, 255, 255);
+    padding: 1%;
+    text-shadow: rgb(0, 0, 0) 5px;
+    border-radius: 3%;
+    background-color: rgba(19, 33, 111, 0.88);
 }
 
 .landingPageBtn{

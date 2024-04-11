@@ -153,6 +153,7 @@ const Register = (props) => {
             required
             autoComplete="off"
             className="signupInput"
+            id="fileInput"
           />
           <input
             type="text"

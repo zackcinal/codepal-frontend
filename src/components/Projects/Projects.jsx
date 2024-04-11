@@ -1,5 +1,6 @@
-import React from 'react'
 import "./Projects.css"
+import getProjects from "../../services/projects.js"
+
 
 function Projects() {
   return (

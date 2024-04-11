@@ -4,7 +4,7 @@ import { signIn } from "../../services/users.js";
 import "./SignIn.css";
 import Navbar from "../../components/NavBar/Navbar.jsx";
 
-function SignIn({ setUser }) {
+function SignIn({ setUser, setProfile }) {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -28,7 +28,8 @@ function SignIn({ setUser }) {
 
     try {
       const userData = await signIn(form);
-      setUser(userData);
+      setUser(userData.user);
+      setProfile(userData.profile)
 
       navigate("/home");
     } catch (error) {

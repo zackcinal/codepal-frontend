@@ -1,85 +1,85 @@
-// import React, { useState, useEffect } from "react";
-// import { useParams, useNavigate } from "react-router-dom";
-// import { getUserById, updateUser } from "../../services/users.js";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { getUserById, updateUser } from "../../services/users.js";
 import "./EditUser.css";
 import Navbar from "../../components/NavBar/Navbar.jsx";
 
 function EditUser() {
-  // const { userId } = useParams();
-  // const navigate = useNavigate();
+  const { userId } = useParams();
+  const navigate = useNavigate();
 
-  // const [form, setForm] = useState({
-  //   first_name: "",
-  //   last_name: "",
-  //   username: "",
-  //   email: "",
-  //   password: "",
-  //   confirmPassword: "",
-  //   is_developer: false,
-  //   isError: false,
-  //   errorMsg: "",
-  //   role: "FS"
-  // });
+  const [form, setForm] = useState({
+    first_name: "",
+    last_name: "",
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    is_developer: false,
+    isError: false,
+    errorMsg: "",
+    role: "FS"
+  });
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const userData = await getUserById(userId);
-  //       setForm(userData);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const userData = await getUserById(userId);
+        setForm(userData);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-  //   fetchData();
-  // }, [userId]);
+    fetchData();
+  }, [userId]);
 
-  // const handleChange = (e) => {
-  //   const { name, value, type, checked } = e.target;
-  //   const newValue = type === "checkbox" ? checked : value;
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const newValue = type === "checkbox" ? checked : value;
 
-  //   setForm({
-  //     ...form,
-  //     [name]: newValue,
-  //   });
-  // };
+    setForm({
+      ...form,
+      [name]: newValue,
+    });
+  };
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-  //   try {
-  //     await updateUser(userId, form);
-  //     navigate(`/user/${userId}`);
-  //   } catch (error) {
-  //     console.error(error);
-  //     setForm((prevForm) => ({
-  //       ...prevForm,
-  //       isError: true,
-  //       errorMsg: "Failed to update user",
-  //       password: "",
-  //       confirmPassword: "",
-  //     }));
-  //   }
-  // };
+    try {
+      await updateUser(userId, form);
+      navigate(`/user/${userId}`);
+    } catch (error) {
+      console.error(error);
+      setForm((prevForm) => ({
+        ...prevForm,
+        isError: true,
+        errorMsg: "Failed to update user",
+        password: "",
+        confirmPassword: "",
+      }));
+    }
+  };
 
-  // const renderError = () => {
-  //   const toggleForm = form.isError ? "editUserDanger" : "";
+  const renderError = () => {
+    const toggleForm = form.isError ? "editUserDanger" : "";
 
-  //   if (form.isError) {
-  //     return (
-  //       <button type="submit" className={toggleForm}>
-  //         {form.errorMsg}
-  //       </button>
-  //     );
-  //   } else {
-  //     return <button type="submit" className="editUserButton">Update</button>;
-  //   }
-  // };
+    if (form.isError) {
+      return (
+        <button type="submit" className={toggleForm}>
+          {form.errorMsg}
+        </button>
+      );
+    } else {
+      return <button type="submit" className="editUserButton">Update</button>;
+    }
+  };
 
   return (
     <div className="editUserContainer">
       <Navbar />
-      {/* <div className="editUserFormContainer">
+      <div className="editUserFormContainer">
         <h1 className="editUserHeader">Edit User</h1>
         <form className="editUserForm" onSubmit={handleSubmit}>
           <input
@@ -206,7 +206,7 @@ function EditUser() {
           </div>
           {renderError()}
         </form>
-      </div> */}
+      </div>
     </div>
   );
 }

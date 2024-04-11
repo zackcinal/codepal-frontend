@@ -13,10 +13,16 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { signOut, verifyUser } from './services/users.js';
 
+
 function App() {
   const [user, setUser] = useState(null);
+<<<<<<< Updated upstream
   const [profile, setProfile] = useState(null)
+=======
+  const [profilePage,setProfilePage] = useState("hello")
+>>>>>>> Stashed changes
   const navigate = useNavigate();
+
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -39,6 +45,7 @@ function App() {
     <div className="App">
       <Navbar user={user} handleLogout={handleLogout} />
       <Routes>
+<<<<<<< Updated upstream
       <Route path="/" element={<Landing setUser={setUser} user={user} />} />
       <Route path="/home" element={<MainPage setUser={setUser} user={user}/>} />
       <Route path="/userprofile" element={<UserProfile setUser={setUser} user={user} profile={profile} />} />
@@ -47,6 +54,16 @@ function App() {
       <Route path="/help" element={<AboutUs setUser={setUser} user={user}/>} />
       <Route path="/signup" element={<SignUp setUser={setUser} user={user}/>} />
       <Route path="/signin" element={<SignIn setUser={setUser} setProfile={setProfile} />} />
+=======
+      <Route path="/" element={<Landing setUser={setUser} />} />
+      <Route path="/home" element={<MainPage setUser={setUser} profilePage={profilePage} setProfilePage={setProfilePage}/>} />
+      <Route path="/userprofile" element={<UserProfile setUser={setUser} profilePage={profilePage}/>} />
+      <Route path="/editprofile" element={<EditUser setUser={setUser} />} />
+      <Route path="/editreview" element={<EditReview setUser={setUser} />} />
+      <Route path="/help" element={<AboutUs setUser={setUser} />} />
+      <Route path="/signup" element={<SignUp setUser={setUser} />} />
+      <Route path="/signin" element={<SignIn setUser={setUser} />} />
+>>>>>>> Stashed changes
       </Routes>
     </div>
   );

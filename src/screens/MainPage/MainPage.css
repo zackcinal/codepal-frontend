@@ -12,6 +12,10 @@
 
 .profilesContainer{
     min-height: 55vh;
-    background-color: red;
     width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;
 }
+

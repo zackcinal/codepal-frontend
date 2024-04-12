@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { signUp } from "../../services/users.js";
 import "./SignUp.css";
 import Navbar from "../../components/NavBar/Navbar.jsx";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { signUp } from "../../services/users.js";
 
 const Register = (props) => {
   const navigate = useNavigate();
@@ -21,9 +21,7 @@ const Register = (props) => {
   });
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    console.log(e.target.value)
-    console.log(form.role)
+    const { name, value, files, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
 
     setForm({
@@ -37,9 +35,6 @@ const Register = (props) => {
 
     try {
       const userData = await signUp(form);
-      // Assuming setUser is a function to set user data
-      // setUser(userData);
-
       navigate("/signin");
     } catch (error) {
       console.error(error);
@@ -47,7 +42,6 @@ const Register = (props) => {
         ...prevForm,
         isError: true,
         errorMsg: "Invalid Credentials",
-        // Clearing password fields on error
         password: "",
         confirmPassword: "",
       }));
@@ -138,7 +132,8 @@ const Register = (props) => {
             type="file"
             name="profile_picture"
             value={form.profile_picture}
-            placeholder="Enter Profile Picture URL"
+            accept="image/jpeg,image/png,image/gif"
+            placeholder="Upload a profile picture"
             onChange={handleChange}
             required
             autoComplete="off"

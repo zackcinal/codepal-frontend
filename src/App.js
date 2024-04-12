@@ -51,7 +51,6 @@ function App() {
       <Route path="/home" element={<MainPage />} />
       <Route path="/userprofile/:profileId" element={<UserProfile profilePage={profilePage}/>} />
       <Route path="/userprofile/:profileId/projects" element={<Projects profilePage={profilePage}/>} />
-      {/* {user?.first_name && <Route path="/userprofile" element={<UserProfile setUser={setUser} user={user} profile={profile} />} />} */}
       <Route path="/editprofile" element={<EditUser setUser={setUser} user={user} profilePage={profilePage}/>} />
       <Route path="/editreview" element={<EditReview setUser={setUser} user={user}/>} />
       <Route path="/help" element={<AboutUs setUser={setUser} user={user}/>} />

@@ -13,6 +13,7 @@ import CreateProject from "../../components/Projects/CreateProject";
 import { Link } from "react-router-dom";
 
 
+
 function UserProfile({profile}) {
   const [reviews, setReviews] = useState([]);
   const [followers, setFollowers] = useState([]);
@@ -20,6 +21,7 @@ function UserProfile({profile}) {
   const [userProfile, setUserProfile] = useState (null)
 
   const { profileId } = useParams()
+
 
   useEffect(() => {
     console.log("i did change the page")

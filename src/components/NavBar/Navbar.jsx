@@ -51,3 +51,18 @@ function Navbar({ user, handleLogout, profile }) {
 }
 
 export default Navbar;
+
+
+// function Navbar({ profile, handleLogout }) {
+//   const navigate = useNavigate();
+
+//   const navbarBtn = () => {
+//     if (profile) {
+//       return (
+//         <>
+//             <button 
+//             onClick={() => {
+//               navigate(`/userprofile/${profile.id}`);
+//               console.log(profile)
+//             }}
+//             className="navbarBtn">Welcome {profile.user.first_name}</button>

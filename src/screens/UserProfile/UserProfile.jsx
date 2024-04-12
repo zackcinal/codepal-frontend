@@ -24,7 +24,6 @@ function UserProfile({profile}) {
 
 
   useEffect(() => {
-    console.log("i did change the page")
     const fetchProfile = async () =>{
       const profilefetched = await getProfile(profileId)
       setUserProfile( profilefetched )
@@ -103,8 +102,10 @@ function UserProfile({profile}) {
          </TabPanel>
          <TabPanel>
            <div className="userProfilePageDisplay">
+
               <Followers followers={followers} key={followers.id} />
            {/* <Followers userId={profileId} /> */}
+
            </div>
          </TabPanel>
          <TabPanel>

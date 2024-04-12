@@ -11,13 +11,9 @@ import { useParams } from "react-router-dom";
 import CreateProject from "../../components/Projects/CreateProject";
 import { Link } from "react-router-dom";
 
-
-
-
-function UserProfile({profilePage}) {
-  const [reviews, setReviews] = useState([]);
+function UserProfile(profilePage) {
+  console.log(profilePage)
   const [userProfile, setUserProfile] = useState (null)
-
   const {profileId} = useParams()
 
   useEffect(() => {

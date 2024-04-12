@@ -5,25 +5,15 @@ import { getProfiles, getProfile } from '../../services/users'
 
 
 
-function UserPreview({ profile, setProfilePage, profilePage }) {
+function UserPreview({ profile, setProfilePage }) {
   const navigate = useNavigate();
   const { userId } = useParams();
 
 
   function outerButtonClick() {
-      navigate(`/userprofile/`);
+      navigate(`/userprofile/${profile.id}`);
       console.log("Outer button clicked");
-      const fetchProfile = async () => {
-        try {
-          const userProfile = await getProfile(userId);
-          console.log("this is the profile that matches that id",userProfile)
-          setProfilePage(userId)
-        } catch (error) {
-          console.error("Error fetching profile:", error);
-        }
-      };
-  
-      fetchProfile();
+      setProfilePage(profile)
   }
 
   function innerButtonClick(event) {
@@ -40,12 +30,11 @@ function UserPreview({ profile, setProfilePage, profilePage }) {
     className='profileCard'>
       <div className='profileCardHeader'>
         <img src={profile.profile_picture} alt={profile.user.username}/>
-        <h2>{profile.user}</h2>
+        <h2>{`${profile.user.first_name} ${profile.user.last_name}`}</h2>
         <h4>{profile.location}</h4>
         <h4>{profile.role=="FS" ? "Full Stack" : profile.role=="FE" ? "Front End" : profile.role=="BE" ? "Back End" : profile.role=="UX" ? "User Experience" : ""}</h4>
       </div>
       <div className='profileCardFollowers'> 
-        <h5>## Followers</h5>
         <button 
           onClick={(event) => {
           innerButtonClick(event)

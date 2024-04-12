@@ -43,7 +43,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Landing setUser={setUser} user={user} />} />
       <Route path="/home" element={<MainPage setUser={setUser} user={user}/>} />
-      <Route path="/userprofile" element={<UserProfile setUser={setUser} user={user} profile={profile} />} />
+      {user?.first_name && <Route path="/userprofile" element={<UserProfile setUser={setUser} user={user} profile={profile} />} />}
       <Route path="/editprofile" element={<EditUser setUser={setUser} user={user}/>} />
       <Route path="/editreview" element={<EditReview setUser={setUser} user={user}/>} />
       <Route path="/help" element={<AboutUs setUser={setUser} user={user}/>} />

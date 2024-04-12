@@ -21,6 +21,8 @@ function UserPreview({ profile }) {
       navigate("/");
   }
 
+  console.log(profile.role)
+
   return (
     <button 
       onClick={() => {

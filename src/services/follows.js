@@ -8,3 +8,12 @@ export const getFollowers = async (userId) => {
         throw error;
     }
 }
+
+export const getFollowerFollowings = async () => {
+    try {
+        const response = await api.get(`/follows/`)
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+}

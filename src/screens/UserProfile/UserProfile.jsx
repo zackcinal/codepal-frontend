@@ -1,15 +1,33 @@
 import "./UserProfile.css";
+import { getReviews } from "../../services/reviews.js";
+import { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Projects from "../../components/Projects/Projects.jsx";
 import Reviews from "../../components/Reviews/Reviews.jsx";
 import Followers from "../../components/Followers/Followers.jsx";
 import Following from "../../components/Following/Following.jsx";
 
-function UserProfile(user) {
+function UserProfile(user, userId) {
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    getReviews(user.user.id)
+      .then((response) => {
+        setReviews(response);
+      })
+      .catch((error) => {
+        console.error("Error fetching reviews:", error);
+      });
+  }, [user.user.id]);
+
   return (
     <div className="userProfilePageContainer">
       <div className="userProfilePageProfileContainer">
-        <img src={user.profile.profilePicture} className="profilePicture" alt="img" />
+        <img
+          src={user.profile.profilePicture}
+          className="profilePicture"
+          alt="img"
+        />
         <h1 className="profileName">
           {user.user.first_name} {user.user.last_name}
         </h1>
@@ -18,6 +36,7 @@ function UserProfile(user) {
         <h4 className="profileDescription">{user.profile.description}</h4>
         <button className="followBtn">Edit Profile</button>
       </div>
+
       <Tabs className="userProfilePageScreen">
         <TabList className="userProfilePageOptions">
           <Tab>
@@ -26,6 +45,7 @@ function UserProfile(user) {
           <Tab>
             <p className="userProfilePageOptionsBtn">Reviews</p>
           </Tab>
+
           <Tab>
             <p className="userProfilePageOptionsBtn">Followers</p>
           </Tab>
@@ -41,12 +61,14 @@ function UserProfile(user) {
         </TabPanel>
         <TabPanel>
           <div className="userProfilePageDisplay">
-            <Reviews />
+            {reviews.map((review) => (
+              <Reviews review={review} key={reviews.id} />
+            ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="userProfilePageDisplay">
-            <Followers />
+          <Followers userId={user.id} />
           </div>
         </TabPanel>
         <TabPanel>

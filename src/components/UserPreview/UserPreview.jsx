@@ -1,24 +1,23 @@
 import React, { useEffect } from 'react'
 import "./UserPreview.css"
-import { useNavigate, useState } from "react-router-dom";
+import { useNavigate, useParams, useState } from "react-router-dom";
 import { getProfiles, getProfile } from '../../services/users'
 
 
 
 function UserPreview({ profile, setProfilePage, profilePage }) {
   const navigate = useNavigate();
+  const { userId } = useParams();
 
 
   function outerButtonClick() {
-      navigate("/userprofile");
+      navigate(`/userprofile/`);
       console.log("Outer button clicked");
-      
-
       const fetchProfile = async () => {
         try {
-          const userProfile = await getProfile(profile.user);
+          const userProfile = await getProfile(userId);
           console.log("this is the profile that matches that id",userProfile)
-          setProfilePage(userProfile)
+          setProfilePage(userId)
         } catch (error) {
           console.error("Error fetching profile:", error);
         }

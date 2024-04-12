@@ -1,8 +1,73 @@
-.editUserContainer{
+.signupContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+.editUserFormContainer {
+    display: flex;
+    justify-content: top;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: 100%;
-    padding: 10vh 0 0 0;
-    margin: 0;
+    height: 90vh;
     box-sizing: border-box;
+    margin-top: 10vh;
     overflow: scroll;
+}
+
+.editUserInput {
+    height: 25px;
+    margin-bottom: 20px;
+}
+
+.editUserForm{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    margin: 0 0 15vh 0;
+  
+}
+
+.editUserButton {
+    width: 10vw;
+    height: 7vh;
+    align-self: center;
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: larger;
+}
+
+.editUserForm a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.editUserForm label {
+    font-size: large;
+    font-weight: 600;
+}
+
+.editUserDanger {
+    margin-top: 20px;
+}
+
+.editUserDanger:hover {
+    transform: scale(1.5); 
+    font-weight: bold; 
+    background-color: lightgray; 
+}
+
+.editUserCheckbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

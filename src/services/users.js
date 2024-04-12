@@ -29,6 +29,7 @@ export const signOut = async () => {
   }
 };
 
+
 export const verifyUser = async () => {
   const token = localStorage.getItem("token");
   if (token) {
@@ -37,6 +38,25 @@ export const verifyUser = async () => {
     return resp.data;
   }
   return false;
+};
+
+export const updateUser = async (userId, newData) => {
+  try {
+    const resp = await api.post(`/users/${userId}update/`, newData);
+    localStorage.setItem("token", resp.data.access);
+    return resp.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getUserById = async (userId) => {
+  try {
+    const response = await api.get(`/users/${userId}/`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const getProfiles = async () => {
@@ -51,6 +71,16 @@ export const getProfiles = async () => {
 export const getProfile = async (userId) => {
   try {
     const response = await api.get(`/profiles/${userId}/`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+
+export const getProfileUser = async (userId) => {
+  try {
+    const response = await api.get(`/users/profiles/${userId}/`);
     return response.data;
   } catch (error) {
     throw error;

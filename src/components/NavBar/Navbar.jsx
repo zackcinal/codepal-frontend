@@ -2,6 +2,7 @@ import React from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 
+
 function Navbar({ user, handleLogout, profile }) {
   const navigate = useNavigate();
 
@@ -33,7 +34,7 @@ function Navbar({ user, handleLogout, profile }) {
     <div className="navbarContainer">
       <button
         onClick={() => {
-          navigate("/");
+          navigate('/');
         }}
         className="navbarBtn"
       >

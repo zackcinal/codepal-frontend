@@ -30,7 +30,9 @@
     font-size: 30vh;
     padding: 0;
     margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5);
 }
+
 
 .landingPageDetail{
     font-size: 10vh;
@@ -48,22 +50,21 @@
     text-shadow: rgb(0, 0 0) 5px;
     border-radius: 10px;
     background-color: rgba(19, 33, 111, 0.88);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5);
 }
 
-.landingPageBtn{
+.landingPageBtn {
     font-size: 5vh;
     padding: 0;
     margin: 0;
     background-color: #30ab65;
-    /* border: transparent;
-    border: 0; */
     box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
     color: white;
     transition: 0.2s ease-in-out;
     height: 10vh;
     aspect-ratio: 2/1;
     border-radius: 10px;
-
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5);
 }
 
 .landingPageBtn:hover{

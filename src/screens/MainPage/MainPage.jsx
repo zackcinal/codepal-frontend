@@ -3,20 +3,20 @@ import "./MainPage.css"
 import Footer from '../../components/Footer/Footer'
 import axios from 'axios'
 import UserPreview from '../../components/UserPreview/UserPreview'
-import { getProfiles} from '../../services/users'
+import { getProfiles, getProfileUser } from '../../services/users'
 
 
-function MainPage({setProfilePage, profilePage}) {
+function MainPage({setProfilePage }) {
   const [profiles, setProfiles] = useState([])
 
   useEffect(() => {
-    getProfiles()
-    .then(response => {
+    async function fetchProfiles(){
+      let response = await getProfiles()
       setProfiles(response)
-    })
-    .catch(error => {
-      console.error('Error fetching profiles:', error);
-    });
+      console.log(response)
+    }
+
+    fetchProfiles()
   }, []);
 
   return (
@@ -24,7 +24,7 @@ function MainPage({setProfilePage, profilePage}) {
       <h1>Developers</h1>
       <div className='profilesContainer'>
         {profiles.map(profile => (
-          <UserPreview profile={profile} key={profile.id} setProfilePage={setProfilePage} profilePage={profilePage}/>
+          <UserPreview profile={profile} key={profile.id} setProfilePage={setProfilePage}/>
         ))}
       </div>
       <Footer />

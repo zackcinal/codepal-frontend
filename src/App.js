@@ -17,6 +17,7 @@ import { signOut, verifyUser } from './services/users.js';
 function App() {
   const [user, setUser] = useState(null);
   const [profile, setProfile] = useState(null)
+  const [userJoinedProfile, setuserJoinedProfile] = useState(null)
   const navigate = useNavigate();
 
 

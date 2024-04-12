@@ -68,9 +68,9 @@ export const getProfiles = async () => {
   }
 };
 
-export const getProfile = async (userId) => {
+export const getProfile = async (profileId) => {
   try {
-    const response = await api.get(`/profiles/${userId}/`);
+    const response = await api.get(`/profiles/${profileId}/`);
     return response.data;
   } catch (error) {
     throw error;
@@ -86,3 +86,5 @@ export const getProfileUser = async (userId) => {
     throw error;
   }
 };
+
+

@@ -8,6 +8,9 @@ import Followers from "../../components/Followers/Followers.jsx";
 import Following from "../../components/Following/Following.jsx";
 import { getProfile } from "../../services/users.js";
 import { useParams } from "react-router-dom";
+import CreateProject from "../../components/Projects/CreateProject";
+import { Link } from "react-router-dom";
+
 
 
 
@@ -31,6 +34,7 @@ function UserProfile({profilePage}) {
   return (
     <div className="userProfilePageContainer">
       <div className="userProfilePageProfileContainer">
+
          <img
            src={userProfile?.profile_picture}
            className="profilePicture"
@@ -85,6 +89,7 @@ function UserProfile({profilePage}) {
            </div>
          </TabPanel>
        </Tabs>
+
 
     </div>
   );

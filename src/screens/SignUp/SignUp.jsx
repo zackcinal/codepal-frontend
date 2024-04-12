@@ -17,7 +17,11 @@ const Register = (props) => {
     is_developer: false,
     isError: false,
     errorMsg: "",
-    role: "FS"
+    role: "FS",
+    description: "", 
+    location: "", 
+    portfolio_link: "", 
+    profile_picture: null 
   });
 
   const handleChange = (e) => {
@@ -27,6 +31,14 @@ const Register = (props) => {
     setForm({
       ...form,
       [name]: newValue,
+    });
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0]; // Assuming only one file is selected
+    setForm({
+      ...form,
+      profile_picture: file,
     });
   };
 
@@ -131,10 +143,9 @@ const Register = (props) => {
           <input
             type="file"
             name="profile_picture"
-            value={form.profile_picture}
             accept="image/jpeg,image/png,image/gif"
             placeholder="Upload a profile picture"
-            onChange={handleChange}
+            onChange={handleFileChange}
             required
             autoComplete="off"
             className="signupInput"

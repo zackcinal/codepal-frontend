@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "./Followers.css"
 import { getFollowers } from '../../services/follows'
 
-function Followers({ userId, followers }) {
+function Followers({ followers }) {
  
 
   // useEffect(() => {

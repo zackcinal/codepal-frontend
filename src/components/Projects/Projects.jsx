@@ -1,29 +1,29 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getProjects } from "../../services/projects.js";
 
 function Projects({ user }) {
   const [projects, setProjects] = useState([]);
-
+  let { profileId } = useParams();
+  console.log(profileId)
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const projectsData = await getProjects(); 
+        const projectsData = await getProjects(profileId); 
         setProjects(projectsData);
       } catch (error) {
         console.error("Error fetching projects:", error);
       }
     }
-
     fetchProjects();
   }, []);
 
+   
   return (
     <div>
       <Link to='/createproject'>
         <button>Add Project</button>
       </Link>
-      
       <div className="project-list">
         {projects.map((project) => (
           <div key={project.id} className="project-item">

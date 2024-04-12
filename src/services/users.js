@@ -1,14 +1,19 @@
 import api from "./apiConfig";
 
-export const signUp = async (credentials) => {
+export const signUp = async (formData) => { 
   try {
-    const resp = await api.post("/users/register/", credentials);
+    const resp = await api.post("/users/register/", formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data' 
+      }
+    });
     localStorage.setItem("token", resp.data.access);
     return resp.data;
   } catch (error) {
     throw error;
   }
 };
+
 
 export const signIn = async (credentials) => {
   try {

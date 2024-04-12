@@ -3,13 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { createProject } from "../../services/projects.js";
 import "./CreateProject.css";
 
-function CreateProject({ user }) {
+function CreateProject({ user, profile }) {
   const navigate = useNavigate();
   const [project, setProject] = useState({
     title: "",
     image: "", 
     description: "",
     link: "", 
+    profile: profile,
   });
   const [error, setError] = useState("");
 
@@ -21,22 +22,23 @@ function CreateProject({ user }) {
     }));
   };
 
-  const projectData = {
-    project_description: "Description of the project",
-    project_image: "URL of the project image",
-    project_link: "URL of the project",
-    user: user
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      if (!user || !user.id) {
+      const projectData = {
+        title: project.title,
+        project_description: project.description,
+        project_image: project.image,
+        project_link: project.link,
+        profile: profile.id,
+      };
+      if (!profile || !profile.id) {
         throw new Error("User ID not available");
       }
-      const userId = user.id;
+      const userId = profile.id;
+      console.log(userId, projectData)
       await createProject(userId, projectData); 
-      navigate("/userprofile");
+      navigate(`/userprofile/${profile.id}`);
     } catch (error) {
       console.error("Error creating project:", error);
       setError("Failed to create project. Please try again.");
@@ -61,6 +63,7 @@ function CreateProject({ user }) {
         <input
           className="input-image"
           placeholder="Image URL"
+          type="url"
           name="image"
           value={project.image}
           onChange={handleChange}
@@ -78,7 +81,7 @@ function CreateProject({ user }) {
           className="input-link"
           id="project-link"
           placeholder="Project Link"
-          type="text"
+          type="url"
           name="link"
           value={project.link}
           onChange={handleChange}

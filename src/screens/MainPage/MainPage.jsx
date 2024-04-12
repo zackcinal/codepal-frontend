@@ -6,7 +6,7 @@ import UserPreview from '../../components/UserPreview/UserPreview'
 import { getProfiles, getProfileUser } from '../../services/users'
 
 
-function MainPage({setProfilePage }) {
+function MainPage() {
   const [profiles, setProfiles] = useState([])
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function MainPage({setProfilePage }) {
       <h1>Developers</h1>
       <div className='profilesContainer'>
         {profiles.map(profile => (
-          <UserPreview profile={profile} key={profile.id} setProfilePage={setProfilePage}/>
+          <UserPreview profile={profile} key={profile.id} />
         ))}
       </div>
       <Footer />

@@ -88,7 +88,6 @@ function EditUser() {
             value={form.first_name}
             placeholder="Enter Your First Name"
             onChange={handleChange}
-            required
             autoComplete="off"
             className="editUserInput"
           />
@@ -98,7 +97,6 @@ function EditUser() {
             value={form.last_name}
             placeholder="Enter Your Last Name"
             onChange={handleChange}
-            required
             autoComplete="off"
             className="editUserInput"
           />
@@ -108,7 +106,6 @@ function EditUser() {
             value={form.username}
             placeholder="Enter Username"
             onChange={handleChange}
-            required
             autoComplete="off"
             className="editUserInput"
           />
@@ -118,7 +115,6 @@ function EditUser() {
             value={form.email}
             placeholder="Enter Email"
             onChange={handleChange}
-            required
             autoComplete="off"
             className="editUserInput"
           />
@@ -146,7 +142,6 @@ function EditUser() {
             value={form.profile_picture}
             placeholder="Enter Profile Picture URL"
             onChange={handleChange}
-            required
             autoComplete="off"
             className="editUserInput"
           />
@@ -156,7 +151,6 @@ function EditUser() {
             value={form.description}
             placeholder="Enter Description"
             onChange={handleChange}
-            required
             autoComplete="off"
             className="editUserInput"
             id="fileInput"
@@ -167,7 +161,6 @@ function EditUser() {
             value={form.location}
             placeholder="Enter Location"
             onChange={handleChange}
-            required
             autoComplete="off"
             className="editUserInput"
           />
@@ -177,7 +170,6 @@ function EditUser() {
             value={form.portfolio_link}
             placeholder="Enter Portfolio Link"
             onChange={handleChange}
-            required
             autoComplete="off"
             className="editUserInput"
           />
@@ -185,7 +177,6 @@ function EditUser() {
             name="role"
             value={form.role}
             onChange={handleChange}
-            required
             className="editUserInput"
             placeholder="Select a role"
           >

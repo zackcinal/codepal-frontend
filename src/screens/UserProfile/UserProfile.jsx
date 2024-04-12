@@ -7,24 +7,51 @@ import Reviews from "../../components/Reviews/Reviews.jsx";
 import Followers from "../../components/Followers/Followers.jsx";
 import Following from "../../components/Following/Following.jsx";
 import { getProfile } from "../../services/users.js";
+import { getFollowerFollowings } from "../../services/follows.js";
 import { useParams } from "react-router-dom";
 import CreateProject from "../../components/Projects/CreateProject";
 import { Link } from "react-router-dom";
 
-function UserProfile(profilePage) {
-  console.log(profilePage)
+
+
+function UserProfile({profile}) {
+  const [reviews, setReviews] = useState([]);
+  const [followers, setFollowers] = useState([]);
+  const [following, setFollowing] = useState([]);
   const [userProfile, setUserProfile] = useState (null)
-  const {profileId} = useParams()
+
+  const { profileId } = useParams()
+
 
   useEffect(() => {
+    console.log("i did change the page")
     const fetchProfile = async () =>{
       const profilefetched = await getProfile(profileId)
-      console.log(profilefetched)
       setUserProfile( profilefetched )
     }
   
     fetchProfile()
-  }, []);
+  }, [profileId]);
+
+  useEffect(() => {
+    getReviews(profileId)
+      .then((response) => {
+        setReviews(response);
+      })
+      .catch((error) => {
+        console.error("Error fetching reviews:", error);
+      });
+  }, [profileId]);
+
+  useEffect(() => {
+    async function fetchFollows () {
+      const response = await getFollowerFollowings()
+      setFollowers(response.followers)
+      setFollowing(response.following)
+    }
+
+    fetchFollows()
+  }, [])
 
 
   return (
@@ -69,9 +96,9 @@ function UserProfile(profilePage) {
          </TabPanel>
          <TabPanel>
            <div className="userProfilePageDisplay">
-             {/* {reviews.map((review) => (
-               <Reviews review={review} key={reviews.id} />
-             ))} */}
+           {reviews?.map((review) => (
+              <Reviews review={review} key={reviews.id} />
+            ))}
            </div>
          </TabPanel>
          <TabPanel>

@@ -5,7 +5,7 @@ import { getProfiles, getProfile } from '../../services/users'
 
 
 
-function UserPreview({ profile, setProfilePage }) {
+function UserPreview({ profile }) {
   const navigate = useNavigate();
   const { userId } = useParams();
 
@@ -13,7 +13,6 @@ function UserPreview({ profile, setProfilePage }) {
   function outerButtonClick() {
       navigate(`/userprofile/${profile.id}`);
       console.log("Outer button clicked");
-      setProfilePage(profile)
   }
 
   function innerButtonClick(event) {
@@ -21,6 +20,8 @@ function UserPreview({ profile, setProfilePage }) {
       event.stopPropagation();
       navigate("/");
   }
+
+  console.log(profile.role)
 
   return (
     <button 

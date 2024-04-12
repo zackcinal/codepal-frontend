@@ -12,7 +12,6 @@ function MainPage() {
   useEffect(() => {
     async function fetchProfiles() {
       let response = await getProfiles();
-      console.log("tab");
       setProfiles(response);
     }
 
@@ -24,19 +23,19 @@ function MainPage() {
       <Tabs className="mainPageScreen">
         <TabList className="mainPageOptions">
           <Tab>
-            <p className="mainPageOptionsBtn">All Developers</p>
+            <p className="mainPageOptionsBtn">ALL DEVELOPERS</p>
           </Tab>
           <Tab>
-            <p className="mainPageOptionsBtn">Full Stack</p>
+            <p className="mainPageOptionsBtn">FULL STACK</p>
           </Tab>
           <Tab>
-            <p className="mainPageOptionsBtn">Front End</p>
+            <p className="mainPageOptionsBtn">FRONT END</p>
           </Tab>
           <Tab>
-            <p className="mainPageOptionsBtn">Back End</p>
+            <p className="mainPageOptionsBtn">BACK END</p>
           </Tab>
           <Tab>
-            <p className="mainPageOptionsBtn">User Experience</p>
+            <p className="mainPageOptionsBtn">UX</p>
           </Tab>
         </TabList>
 

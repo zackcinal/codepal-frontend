@@ -1,21 +1,32 @@
-.mainPageContainer{
-    width: 100%;
-    padding: 10vh 0 0 0;
-    margin: 0;
-    box-sizing: border-box;
-    overflow: scroll;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    flex-direction: column;
+.mainPageContainer {
+  width: 100%;
+  padding: 10vh 0 0 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: scroll;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.profilesContainer{
-    min-height: 55vh;
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    flex-wrap: wrap;
+.profilesContainer {
+  min-height: 55vh;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
 }
 
+ul.mainPageOptions {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 10vw;
+  cursor: pointer;
+}
+
+.react-tabs__tab--selected{
+    text-decoration: underline;
+}

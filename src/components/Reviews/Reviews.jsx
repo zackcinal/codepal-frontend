@@ -1,36 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Reviews.css";
-import { getReviews } from "../../services/reviews.js";
-import { getProfile } from "../../services/profile.js";
 
 function Reviews({review}) {
-  // const [profile, setProfile] = useState([]);
-  // const [reviews, setReviews] = useState([]);
-  // console.log(props.review.reviewed_user)
-
-  // useEffect(() => {
-  //   const fetchReviews = async () => {
-  //     if (props.profile && props.profile.id) {
-  //       const revUser = await getReviews(props.profile.id);
-  //       setReviews(revUser);
-  //     }
-  //   };
-
-  //   const fetchProfile = async () => {
-  //     if (props.profile && props.profile.id) {
-  //       const userProfile = await getProfile(props.profile.id);
-  //       setProfile(userProfile);
-  //     }
-  //   };
-
-  //   fetchReviews();
-  //   fetchProfile();
-  // }, [props.profile]);
-
   return (
     <div className="reviewContainer">
+      <h1>By {review.reviewer.user.username}</h1>
       <p>{review.review}</p>
-      <p>{review.reviewer.user.first_name}</p>
     </div>
   );
 }

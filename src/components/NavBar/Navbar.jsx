@@ -34,7 +34,7 @@ function Navbar({ user, handleLogout, profile }) {
     <div className="navbarContainer">
       <button
         onClick={() => {
-          navigate('/');
+          navigate('/home');
         }}
         className="navbarBtn"
       >

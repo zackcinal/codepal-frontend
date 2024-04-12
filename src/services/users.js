@@ -76,3 +76,13 @@ export const getProfile = async (userId) => {
     throw error;
   }
 };
+
+
+export const getProfileUser = async (userId) => {
+  try {
+    const response = await api.get(`/users/profiles/${userId}/`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

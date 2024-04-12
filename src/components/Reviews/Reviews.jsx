@@ -6,6 +6,7 @@ import { getProfile } from "../../services/profile.js";
 function Reviews(props) {
   const [profile, setProfile] = useState([]);
   const [reviews, setReviews] = useState([]);
+  console.log(props.review.reviewed_user)
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -28,7 +29,8 @@ function Reviews(props) {
 
   return (
     <div className="reviewContainer">
-      <p>{}</p>
+      <p>{props.review.review}</p>
+      <p>{props.review.reviewed_user.description}</p>
     </div>
   );
 }

@@ -8,10 +8,12 @@ import EditUser from './screens/EditUser/EditUser.jsx';
 import MainPage from './screens/MainPage/MainPage.jsx';
 import EditReview from './screens/EditReview/EditReview.jsx';
 import UserProfile from './screens/UserProfile/UserProfile.jsx';
-import { getProfile } from './services/profile.js'
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { signOut, verifyUser } from './services/users.js';
+// import CreateProject from './components/Projects/CreateProject';
+import Projects from './components/Projects/Projects';
+import Reviews from './components/Reviews/Reviews.jsx';
 
 
 function App() {
@@ -41,6 +43,7 @@ function App() {
   return (
     <div className="App">
       <Navbar user={user} handleLogout={handleLogout} />
+      <Projects user={user} profile={profile} />
       <Routes>
       <Route path="/" element={<Landing setUser={setUser} user={user} />} />
       <Route path="/home" element={<MainPage setUser={setUser} user={user}/>} />
@@ -50,6 +53,7 @@ function App() {
       <Route path="/help" element={<AboutUs setUser={setUser} user={user}/>} />
       <Route path="/signup" element={<SignUp setUser={setUser} user={user}/>} />
       <Route path="/signin" element={<SignIn setUser={setUser} setProfile={setProfile} />} />
+      {/* <Route path="/createproject" element={<CreateProject user={user} profile={profile} />} /> */}
       </Routes>
     </div>
   );

@@ -14,13 +14,14 @@ import { Link } from "react-router-dom";
 
 
 
-function UserProfile({profilePage}) {
+function UserProfile() {
   const [reviews, setReviews] = useState([]);
   const [userProfile, setUserProfile] = useState (null)
 
   const {profileId} = useParams()
 
   useEffect(() => {
+    console.log("i did change the page")
     const fetchProfile = async () =>{
       const profilefetched = await getProfile(profileId)
       console.log(profilefetched)
@@ -28,7 +29,7 @@ function UserProfile({profilePage}) {
     }
   
     fetchProfile()
-  }, []);
+  }, [profileId]);
 
 
   return (

@@ -2,16 +2,19 @@ import React from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 
-function Navbar({ user, handleLogout }) {
+function Navbar({ profile, handleLogout }) {
   const navigate = useNavigate();
 
   const navbarBtn = () => {
-    if (user) {
+    if (profile) {
       return (
         <>
-          <Link to="/userprofile">
-            <button className="navbarBtn">Welcome {user.first_name}</button>
-          </Link>
+            <button 
+            onClick={() => {
+              navigate(`/userprofile/${profile.id}`);
+              console.log(profile)
+            }}
+            className="navbarBtn">Welcome {profile.user.first_name}</button>
           <button onClick={handleLogout} className="navbarBtn">
             Sign Out
           </button>
@@ -34,7 +37,7 @@ function Navbar({ user, handleLogout }) {
     <div className="navbarContainer">
       <button
         onClick={() => {
-          navigate("/");
+          navigate('/');
         }}
         className="navbarBtn"
       >

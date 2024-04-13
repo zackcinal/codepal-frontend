@@ -3,22 +3,15 @@ import "./Following.css"
 import { getFollowers } from '../../services/follows'
 
 function Following({ following }) {
- 
 
-  // useEffect(() => {
-  //   const fetchFollowers = async () => {
-  //     try {
-  //       const fetchedFollowers = await getFollowers(userId);
-  //       setFollowers(fetchedFollowers);
-  //     } catch (error) {
-  //       console.error("Error fetching followers:", error);
-  //     }
-  //   };
-  //   fetchFollowers();
-  // }, [userId]);
+  const [isFollowing, setIsFollowing] = useState(true);
+
+  const toggleFolloing = () => {
+    setIsFollowing(prevFollowing => !prevFollowing);
+  }
 
   return (
-    <div>
+    <div className='following-item'>
       <h2>Followings</h2>
       <ul>
         {following.map(following => (
@@ -28,6 +21,7 @@ function Following({ following }) {
           </li>
         ))}
       </ul>
+      <button onClick={toggleFolloing}>{isFollowing ? 'Following' : 'Follow'}</button>
     </div>
   );
 }

@@ -7,7 +7,7 @@ import Reviews from "../../components/Reviews/Reviews.jsx";
 import Followers from "../../components/Followers/Followers.jsx";
 import Following from "../../components/Following/Following.jsx";
 import { getProfile } from "../../services/users.js";
-import { getFollowerFollowings, getFollowers } from "../../services/follows.js";
+import { getFollowerFollowings } from "../../services/follows.js";
 import { useParams } from "react-router-dom";
 import CreateProject from "../../components/Projects/CreateProject";
 import { Link } from "react-router-dom";

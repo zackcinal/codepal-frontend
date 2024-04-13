@@ -1,6 +1,7 @@
 import "./Following.css"
 
 function Following({ following }) {
+
  
   return (
     <div>
@@ -12,6 +13,7 @@ function Following({ following }) {
           <p>{follow.description}</p>
         </div>
         )})}
+
     </div>
   );
 }

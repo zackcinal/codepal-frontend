@@ -85,10 +85,9 @@ export const getProfileUser = async (userId) => {
 };
 
 
-export const updateUser = async (userId, newData) => {
+export const updateUser = async (newData) => {
   try {
-    const resp = await api.put(`/users/${userId}/edit/`, newData);
-    localStorage.setItem("token", resp.data.access);
+    const resp = await api.patch('/users/edit/', newData);
     return resp.data;
   } catch (error) {
     throw error;

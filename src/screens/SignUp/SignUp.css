@@ -14,13 +14,27 @@
   width: 100%;
   height: 90vh;
   box-sizing: border-box;
-  margin-top: 10vh;
-  overflow: scroll;
+  margin-top: -5vh;
+  overflow: auto; 
 }
 
-/* .signUpHeader{
-  margin-top: 10vh;
-} */
+/* NEED THIS TO MAKE THE SCROLLBAR INVISIBLE*/
+.signUpFormContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.signUpFormContainer::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.signUpFormContainer::-webkit-scrollbar-thumb {
+  background: #ffffff00; 
+  border-radius: 4px; 
+}
+
+.signUpFormContainer::-webkit-scrollbar-thumb:hover {
+  background: #ffffff00; 
+}
 
 .signupForm {
   display: flex;
@@ -30,43 +44,57 @@
 }
 
 .signupInput {
-  height: 3vh;
-  border: 1px solid black;
+  height: 2.5vh;
+  border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
+  padding: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
 }
 
-.signupForm select{
+.signupInput:focus {
+  border-color: #007bff;
+}
+
+.signupForm select {
   height: 4vh;
-  border: 1px solid black;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  padding: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
 }
 
-.signUpButton{
-  width: 10vw;
+.signupForm select:focus {
+  border-color: green;
+}
+
+.signUpButton {
+  width: 12vw;
   height: 7vh;
   align-self: center;
   background-color: green;
-  border: 1px solid green;
+  border: 1px solid black;
   border-radius: 5px;
   cursor: pointer;
   color: white;
   font-size: larger;
 }
 
-.signupInputBox{
-  margin-bottom: 0;
+.signUpButton:hover {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  transform: scale(1.05); 
 }
 
-.signUpCheckbox {
+.signUpCheckbox{
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-.signUpHeader {
+.signupInputLabel{
   text-align: center;
+  margin-bottom: 5px;
 }
-
 

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getProjects } from "../../services/projects.js";
+import { getProjects, deleteProject } from "../../services/projects.js";
 import "./Projects.css";
 
-function Projects({ profilePage }) {
+function Projects(profilePage) {
   const [projects, setProjects] = useState([]);
   let { profileId } = useParams();
   useEffect(() => {
@@ -18,6 +18,16 @@ function Projects({ profilePage }) {
     fetchProjects();
   }, []);
 
+  async function handleDelete(profileId, projectId) {
+    try {
+      if (window.confirm("Are you sure you want to delete this item?")) {
+        await deleteProject(profileId, projectId);
+      }
+    } catch (error) {
+      console.error("Error deleting project:", error);
+    }
+  }
+
   return (
     <div>
       <Link to="/createproject">
@@ -28,7 +38,7 @@ function Projects({ profilePage }) {
           <div key={project.id} className="project-item">
             <div className="image-container">
               <img src={project.project_image} alt={project.title} />
-              <button className="delete-button">Delete Project</button>
+              <button className="delete-button" onClick={() => handleDelete(project.profile)}>Delete Project</button>
             </div>
             <div>
               <h2>{project.title}</h2>

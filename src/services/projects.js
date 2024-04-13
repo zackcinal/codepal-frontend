@@ -18,3 +18,14 @@ export const createProject = async (userId, projectData) => {
     throw error;
   }
 };
+
+export const deleteProject = async (profileId, projectId) => {
+  console.log(profileId, projectId);
+  try {
+    const response = await api.delete(`/profiles/${profileId}/projects/delete/`);
+    console.log("Deleted project", projectId);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

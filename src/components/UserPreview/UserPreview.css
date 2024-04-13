@@ -53,14 +53,14 @@
     padding: 0;
     margin: 1vh;
     background-color: #30ab65;
-    /* border: white;
-    border: 0; */
+    border: 1px solid green;
     box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
     color: white;
     transition: 0.2s ease-in-out;
     height: 3vh;
     aspect-ratio: 3/1;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .profileCardFollowBtn:hover{

@@ -17,15 +17,17 @@ import Reviews from "./components/Reviews/Reviews.jsx";
 
 function App() {
   const [user, setUser] = useState(null);
-  const [profile, setProfile] = useState(null);
-  const [profilePage, setProfilePage] = useState(null);
+
+  const [profile, setProfile] = useState(null)
+  const [userJoinedProfile, setuserJoinedProfile] = useState(null)
+  const [profilePage, setProfilePage] = useState(null)
 
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUser = async () => {
       const fetchedUser = await verifyUser();
-      console.log("this is the fetched user", fetchedUser.profile);
+
       setUser(fetchedUser.user);
       setProfile(fetchedUser.profile);
     };
@@ -43,8 +45,9 @@ function App() {
   return (
     <div className="App">
       <Navbar user={user} handleLogout={handleLogout} profile={profile} />
-      <Projects user={user} profile={profile} />
+      <Projects user={user} profile={profile} profilePage={profilePage} />
       <Routes>
+
         <Route path="/" element={<Landing setUser={setUser} user={user} />} />
         <Route path="/home" element={<MainPage />} />
         <Route
@@ -76,6 +79,7 @@ function App() {
           path="/createproject"
           element={<CreateProject user={user} profile={profile} />}
         />
+
       </Routes>
     </div>
   );

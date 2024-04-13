@@ -3,8 +3,6 @@ import "./UserPreview.css"
 import { useNavigate, useParams, useState } from "react-router-dom";
 import { getProfiles, getProfile } from '../../services/users'
 
-
-
 function UserPreview({ profile }) {
   const navigate = useNavigate();
   const { userId } = useParams();
@@ -12,7 +10,6 @@ function UserPreview({ profile }) {
 
   function outerButtonClick() {
       navigate(`/userprofile/${profile.id}`);
-      console.log("Outer button clicked");
   }
 
   function innerButtonClick(event) {
@@ -20,8 +17,6 @@ function UserPreview({ profile }) {
       event.stopPropagation();
       navigate("/");
   }
-
-  console.log(profile.role)
 
   return (
     <button 

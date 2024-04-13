@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
 import "./UserPreview.css"
-import { useNavigate, useParams, useState } from "react-router-dom";
-import { getProfiles, getProfile } from '../../services/users'
+import { useNavigate, useParams } from "react-router-dom";
+import { addFollows } from "../../services/follows";
 
-function UserPreview({ profile }) {
+function UserPreview({ profile, myProfile }) {
   const navigate = useNavigate();
   const { userId } = useParams();
 
@@ -12,10 +11,11 @@ function UserPreview({ profile }) {
       navigate(`/userprofile/${profile.id}`);
   }
 
-  function innerButtonClick(event) {
+  async function innerButtonClick(event) {
       console.log("Inner button clicked");
       event.stopPropagation();
-      navigate("/");
+      await addFollows(myProfile.id, profile.id)
+      navigate("/home");
   }
 
   return (
@@ -31,11 +31,11 @@ function UserPreview({ profile }) {
         <h4>{profile.role=="FS" ? "Full Stack" : profile.role=="FE" ? "Front End" : profile.role=="BE" ? "Back End" : profile.role=="UX" ? "User Experience" : ""}</h4>
       </div>
       <div className='profileCardFollowers'> 
-        <button 
+        {myProfile && <button 
           onClick={(event) => {
-          innerButtonClick(event)
-        }}
-        className='profileCardFollowBtn'>Follow</button>
+            innerButtonClick(event)
+          }}
+        className='profileCardFollowBtn'>Follow</button>}
       </div>
     </button>
   )

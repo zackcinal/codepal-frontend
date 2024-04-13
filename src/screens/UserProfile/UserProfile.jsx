@@ -45,7 +45,8 @@ function UserProfile({profile}) {
 
   useEffect(() => {
     async function fetchFollows () {
-      const response = await getFollowerFollowings()
+      const response = await getFollowerFollowings(profileId)
+      console.log(response)
       setFollowers(response.followers)
       setFollowing(response.following)
     }
@@ -106,8 +107,6 @@ function UserProfile({profile}) {
          <TabPanel>
            <div className="userProfilePageDisplay">
               <Followers followers={followers} key={followers.id} />
-
-           {/* <Followers userId={profileId} /> */}
            </div>
          </TabPanel>
          <TabPanel>

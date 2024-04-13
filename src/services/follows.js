@@ -9,10 +9,19 @@ export const getFollowers = async (userId) => {
     }
 }
 
-export const getFollowerFollowings = async () => {
+export const getFollowerFollowings = async (id) => {
     try {
-        const response = await api.get(`/follows/`)
+        const response = await api.get(`/follows/${id}/`)
         return response.data;
+    } catch (error) {
+        throw error;
+    }
+}
+
+export const addFollows = async (id1, id2) => {
+    try {
+        const response = await api.post(`/follower/${id1}/follows/${id2}/`)
+        return response.data
     } catch (error) {
         throw error;
     }

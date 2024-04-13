@@ -23,7 +23,8 @@ function Following({ following }) {
       <ul>
         {following.map(following => (
           <li key={following.id}>
-            {following.user.first_name} {/* Assuming 'name' is a property of the follower */}
+            {following.user.first_name}
+            <img src={following.profile_picture} alt={following.name} className="following-image" />
           </li>
         ))}
       </ul>

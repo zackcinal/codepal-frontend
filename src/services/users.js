@@ -43,17 +43,9 @@ export const verifyUser = async () => {
     return resp.data;
   }
   return false;
+  
 };
 
-export const updateUser = async (userId, newData) => {
-  try {
-    const resp = await api.post(`/users/${userId}update/`, newData);
-    localStorage.setItem("token", resp.data.access);
-    return resp.data;
-  } catch (error) {
-    throw error;
-  }
-};
 
 export const getUserById = async (userId) => {
   try {
@@ -93,3 +85,21 @@ export const getProfileUser = async (userId) => {
 };
 
 
+export const updateUser = async (userId, newData) => {
+  try {
+    const resp = await api.put(`/users/${userId}/edit/`, newData);
+    localStorage.setItem("token", resp.data.access);
+    return resp.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteUser = async (userId) => {
+  try {
+    const resp = await api.delete(`/users/${userId}/delete/`);
+    return resp.data;
+  } catch (error) {
+    throw error;
+  }
+};

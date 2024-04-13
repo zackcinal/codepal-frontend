@@ -45,7 +45,7 @@ function App() {
   return (
     <div className="App">
       <Navbar user={user} handleLogout={handleLogout} profile={profile} />
-      <Projects user={user} profile={profile} profilePage={profilePage} />
+      {/* <Projects user={user} profile={profile} profilePage={profilePage} /> */}
       <Routes>
 
         <Route path="/" element={<Landing setUser={setUser} user={user} />} />
@@ -58,7 +58,7 @@ function App() {
           path="/userprofile/:profileId/projects"
           element={<Projects profilePage={profilePage} />}
         />
-        <Route path="/editprofile/:id" element={<EditUser />} />
+        <Route path="/users/:id/edit" element={<EditUser user={user} />} />
         <Route
           path="/editreview"
           element={<EditReview setUser={setUser} user={user} />}

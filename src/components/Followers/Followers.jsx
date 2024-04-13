@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "./Followers.css"
 import { getFollowers } from '../../services/follows'
+import { getUser } from '../../services/users.js'
 
 function Followers({ followers }) {
  
@@ -23,7 +24,10 @@ function Followers({ followers }) {
       <ul>
         {followers.map(follower => (
           <li key={follower.id}>
-            {follower.user.first_name} {/* Assuming 'name' is a property of the follower */}
+            {follower.profile_picture && <img src={follower.profile_picture} alt={follower.name} className="follower-image" />}
+            <span>{follower.name}</span>
+            {follower.user.first_name}
+            
           </li>
         ))}
       </ul>

@@ -1,63 +1,85 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { getUserById, updateUser } from "../../services/users.js";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { updateUser } from "../../services/users.js";
 import "./EditUser.css";
 import Navbar from "../../components/NavBar/Navbar.jsx";
 
-function EditUser() {
-  const { userId } = useParams();
+function EditUser({user, profile}) {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    first_name: "",
-    last_name: "",
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    is_developer: false,
+    user: {
+      first_name: user.first_name,
+      last_name: user.last_name,
+      username: user.username,
+      email: user.email,
+    },
+    description: profile.description,
+    location: profile.location,
+    portfolio_link: profile.portfolio_link,
+    role: profile.role,
+    is_developer: profile.is_developer,
     isError: false,
     errorMsg: "",
-    role: "FS"
   });
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const userData = await getUserById(userId);
-        setForm(userData);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchData();
-  }, [userId]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
 
-    setForm({
-      ...form,
+    setForm(prevForm => ({
+      ...prevForm,
       [name]: newValue,
-    });
+    }));
+  };
+
+  // const handleUserChange = (e) => {
+  //   const { name, value } = e.target;
+
+  //   setForm(prevForm => ({
+  //     ...prevForm,
+  //     user: {
+  //       ...prevForm.user,
+  //       [name]: value
+  //     }
+  //   }));
+  // };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0]; // Assuming only one file is selected
+    setForm(prevForm => ({
+      ...prevForm,
+      profile_picture: file,
+    }));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    const formData = new FormData();
+    formData.append('user[first_name]', form.user.first_name);
+    formData.append('user[last_name]', form.user.last_name);
+    formData.append('user[username]', form.user.username);
+    formData.append('user[email]', form.user.email);
+    formData.append('description', form.description);
+    formData.append('location', form.location);
+    formData.append('portfolio_link', form.portfolio_link);
+    formData.append('role', form.role);
+    formData.append('is_developer', form.is_developer);
+
+    if (form.profile_picture) {
+        formData.append('profile_picture', form.profile_picture);
+    }
+
     try {
-      await updateUser(userId, form);
-      navigate(`/user/${userId}`);
+      await updateUser(formData);  // Make sure updateUser can handle FormData
+      navigate(`/userprofile/${profile.id}`);
     } catch (error) {
       console.error(error);
       setForm((prevForm) => ({
         ...prevForm,
         isError: true,
         errorMsg: "Failed to update user",
-        password: "",
-        confirmPassword: "",
       }));
     }
   };
@@ -72,7 +94,9 @@ function EditUser() {
         </button>
       );
     } else {
-      return <button type="submit" className="editUserButton">Update</button>;
+      return (
+        <button type="submit" className="editUserButton">Update</button>
+      )
     }
   };
 
@@ -81,67 +105,48 @@ function EditUser() {
       <Navbar />
       <div className="editUserFormContainer">
         <h1 className="editUserHeader">Edit User</h1>
-        <form className="editUserForm" onSubmit={handleSubmit}>
-          <input
+        <form className="editUserForm" onSubmit={handleSubmit} >
+          {/* <input
             type="text"
             name="first_name"
-            value={form.first_name}
+            value={form.user.first_name}
             placeholder="Enter Your First Name"
-            onChange={handleChange}
+            onChange={handleUserChange}
             autoComplete="off"
             className="editUserInput"
           />
           <input
             type="text"
             name="last_name"
-            value={form.last_name}
+            value={form.user.last_name}
             placeholder="Enter Your Last Name"
-            onChange={handleChange}
+            onChange={handleUserChange}
             autoComplete="off"
             className="editUserInput"
           />
           <input
             type="text"
             name="username"
-            value={form.username}
+            value={form.user.username}
             placeholder="Enter Username"
-            onChange={handleChange}
+            onChange={handleUserChange}
             autoComplete="off"
             className="editUserInput"
           />
           <input
             type="email"
             name="email"
-            value={form.email}
+            value={form.user.email}
             placeholder="Enter Email"
-            onChange={handleChange}
+            onChange={handleUserChange}
             autoComplete="off"
             className="editUserInput"
-          />
-          <input
-            type="password"
-            name="password"
-            value={form.password}
-            placeholder="Enter Password"
-            onChange={handleChange}
-            autoComplete="off"
-            className="editUserInput"
-          />
-          <input
-            type="password"
-            name="confirmPassword"
-            value={form.confirmPassword}
-            placeholder="Confirm Password"
-            onChange={handleChange}
-            autoComplete="off"
-            className="editUserInput"
-          />
+          /> */}
           <input
             type="file"
             name="profile_picture"
-            value={form.profile_picture}
-            placeholder="Enter Profile Picture URL"
-            onChange={handleChange}
+            accept="image/jpeg,image/png,image/gif"
+            onChange={handleFileChange}
             autoComplete="off"
             className="editUserInput"
           />

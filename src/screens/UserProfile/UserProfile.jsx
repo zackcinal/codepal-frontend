@@ -69,7 +69,9 @@ function UserProfile({profile}) {
          <h5 className="profileLocation">{userProfile?.location}</h5>
          <h3 className="profileRole">{userProfile?.role}</h3>
          <h4 className="profileDescription">{userProfile?.description}</h4>
-         <button className="followBtn">Edit Profile</button>
+         <Link to="/users/edit">
+          <button className="followBtn">Edit Profile</button>
+         </Link>
     </div>
 
     <Tabs className="userProfilePageScreen">

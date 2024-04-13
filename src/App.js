@@ -58,7 +58,7 @@ function App() {
           path="/userprofile/:profileId/projects"
           element={<Projects profilePage={profilePage} />}
         />
-        <Route path="/users/:id/edit" element={<EditUser user={user} />} />
+        {user && <Route path="/users/edit" element={<EditUser user={user} profile={profile}/>} />}
         <Route
           path="/editreview"
           element={<EditReview setUser={setUser} user={user} />}

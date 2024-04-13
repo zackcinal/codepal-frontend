@@ -1,34 +1,17 @@
-import React, { useState, useEffect } from 'react'
 import "./Followers.css"
-import { getFollowerFollowings } from '../../services/follows'
-import { getUser } from '../../services/users.js'
 
 function Followers({ followers }) {
 
-
- 
-  const [onefollowers, setFollowers] = useState([]);
-
-  useEffect(() => {
-    const fetchFollowers = async () => {
-      try {
-        const fetchedFollowers = await getFollowerFollowings();
-        setFollowers(fetchedFollowers);
-      } catch (error) {
-        console.error("Error fetching followers:", error);
-      }
-    };
-    fetchFollowers();
-  }, []);
-
   return (
     <div>
-      {onefollowers?.followers?.map((follow) => {
-        return <> 
-        <h2>{follow.description}</h2>
-        </>
-      })}
-     
+      {followers?.map((follow) => {
+        return (
+        <div> 
+          <h2>{follow.user.first_name}</h2>
+          <img src={"http://127.0.0.1:8000/" + follow.profile_picture} alt="User Description" />
+          <p>{follow.description}</p>
+        </div>
+        )})}
     </div>
   );
 }

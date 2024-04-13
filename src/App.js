@@ -49,7 +49,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Landing setUser={setUser} user={user} />} />
-        <Route path="/home" element={<MainPage />} />
+        <Route path="/home" element={<MainPage profile={profile} />} />
         <Route
           path="/userprofile/:profileId"
           element={<UserProfile profilePage={profilePage} />}

@@ -24,8 +24,7 @@ function Followers({ followers }) {
       <ul>
         {followers.map(follower => (
           <li key={follower.id}>
-            {follower.profile_picture && <img src={follower.profile_picture} alt={follower.name} className="follower-image" />}
-            <span>{follower.name}</span>
+           <img src={follower.profile_picture} alt={follower.name} className="follower-image" />
             {follower.user.first_name}
             
           </li>

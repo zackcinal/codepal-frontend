@@ -1,0 +1,26 @@
+.follow-item{
+    border-bottom: 1px solid black;
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 10px;
+}
+
+.follow-item h2{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize ;
+}
+
+.follow-item div img{
+    border-radius: 10px;
+    max-width: 50px;
+}
+
+.follow-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}

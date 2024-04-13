@@ -6,8 +6,8 @@ import { getLikesUnlikes } from '../../services/likes.js'
 
 function Projects(profilePage) {
   const [projects, setProjects] = useState([]);
-  const [likes, setLikes] = useState({});
-  const [unLikes, setUnLikes] = useState({});
+  // const [likes, setLikes] = useState({});
+  // const [unLikes, setUnLikes] = useState({});
 
   let { profileId } = useParams();
 
@@ -23,16 +23,16 @@ function Projects(profilePage) {
     fetchProjects();
   }, []);
 
-useEffect(() => {
-  async function fetchLikes () {
-    const response = await getLikesUnlikes()
-    setLikes(response.likes)
-    setUnLikes(response.unLikes)
-  }
+// useEffect(() => {
+//   async function fetchLikes () {
+//     const response = await getLikesUnlikes()
+//     setLikes(response.likes)
+//     setUnLikes(response.unLikes)
+//   }
 
-fetchLikes()
+// fetchLikes()
 
-}, [])
+// }, [])
 
 
   async function handleDelete(profileId, projectId) {

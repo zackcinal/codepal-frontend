@@ -1,11 +1,17 @@
 import "./UserPreview.css"
 import { useNavigate, useParams } from "react-router-dom";
 import { addFollows } from "../../services/follows";
+import { useEffect, useState } from "react";
 
-function UserPreview({ profile, myProfile }) {
+function UserPreview({ profile, myProfile, isFollowed, checkIfFollowed}) {
   const navigate = useNavigate();
   const { userId } = useParams();
 
+  const [followed, setFollowed] = useState()
+
+  useEffect(() => {
+    setFollowed(isFollowed)
+  }, []);
 
   function outerButtonClick() {
       navigate(`/userprofile/${profile.id}`);
@@ -15,6 +21,7 @@ function UserPreview({ profile, myProfile }) {
       console.log("Inner button clicked");
       event.stopPropagation();
       await addFollows(myProfile.id, profile.id)
+      checkIfFollowed()
       navigate("/home");
   }
 
@@ -31,7 +38,7 @@ function UserPreview({ profile, myProfile }) {
         <h4>{profile.role=="FS" ? "Full Stack" : profile.role=="FE" ? "Front End" : profile.role=="BE" ? "Back End" : profile.role=="UX" ? "User Experience" : ""}</h4>
       </div>
       <div className='profileCardFollowers'> 
-        {myProfile && <button 
+        {myProfile && !isFollowed &&  <button 
           onClick={(event) => {
             innerButtonClick(event)
           }}

@@ -4,9 +4,12 @@ import Footer from "../../components/Footer/Footer";
 import UserPreview from "../../components/UserPreview/UserPreview";
 import { getProfiles } from "../../services/users";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { getFollowerFollowings } from "../../services/follows";
+
 
 function MainPage({profile}) {
   const [profiles, setProfiles] = useState([]);
+  const [followingIds, setFollowingIds] = useState([]);
 
   useEffect(() => {
     async function fetchProfiles() {
@@ -16,6 +19,22 @@ function MainPage({profile}) {
 
     fetchProfiles();
   }, []);
+
+
+  async function checkIfFollowed() {
+    const follows = profile && await getFollowerFollowings(profile.id)
+    
+    const followingIds = follows?.following?.map(follow => {
+      return follow.id
+    })
+
+    setFollowingIds(followingIds)
+  }
+
+  useEffect(() => {
+    checkIfFollowed()
+  }, [profile]);
+
 
   return (
     <div className="mainPageContainer">
@@ -43,7 +62,7 @@ function MainPage({profile}) {
             <h1>Developers</h1>
             <div className="profilesContainer">
               {profiles.map((currentProfile) => (
-                <UserPreview profile={currentProfile} key={currentProfile.id} myProfile={profile}/>
+                <UserPreview profile={currentProfile} key={currentProfile.id} myProfile={profile} isFollowed={followingIds?.includes(currentProfile.id)} checkIfFollowed={checkIfFollowed} />
               ))}
             </div>
           </div>
@@ -54,7 +73,7 @@ function MainPage({profile}) {
             <div className="profilesContainer">
               {profiles.map((currentProfile) =>
                 currentProfile.role === "FS" ? (
-                  <UserPreview profile={currentProfile} key={currentProfile.id} myProfile={profile}/>
+                  <UserPreview profile={currentProfile} key={currentProfile.id} myProfile={profile} isFollowed={followingIds?.includes(currentProfile.id)} checkIfFollowed={checkIfFollowed} />
                 ) : null
               )}
             </div>
@@ -66,7 +85,7 @@ function MainPage({profile}) {
             <div className="profilesContainer">
               {profiles.map((currentProfile) =>
                 currentProfile.role === "FE" ? (
-                  <UserPreview profile={currentProfile} key={currentProfile.id} myProfile={profile}/>
+                  <UserPreview profile={currentProfile} key={currentProfile.id} myProfile={profile} isFollowed={followingIds?.includes(currentProfile.id)} checkIfFollowed={checkIfFollowed} />
                 ) : null
               )}
             </div>
@@ -78,7 +97,7 @@ function MainPage({profile}) {
             <div className="profilesContainer">
               {profiles.map((currentProfile) =>
                 currentProfile.role === "BE" ? (
-                  <UserPreview profile={currentProfile} key={currentProfile.id} myProfile={profile}/>
+                  <UserPreview profile={currentProfile} key={currentProfile.id} myProfile={profile} isFollowed={followingIds?.includes(currentProfile.id)} checkIfFollowed={checkIfFollowed} />
                 ) : null
               )}
             </div>
@@ -90,7 +109,7 @@ function MainPage({profile}) {
             <div className="profilesContainer">
               {profiles.map((currentProfile) =>
                 currentProfile.role === "UX" ? (
-                  <UserPreview profile={currentProfile} key={currentProfile.id} myProfile={profile}/>
+                  <UserPreview profile={currentProfile} key={currentProfile.id} myProfile={profile} isFollowed={followingIds?.includes(currentProfile.id)} checkIfFollowed={checkIfFollowed} />
                 ) : null
               )}
             </div>

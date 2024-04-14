@@ -1,24 +1,25 @@
-import "./Following.css"
+import "./Following.css";
 
 function Following({ following }) {
-
- 
   return (
-    <div className="following-item">
+    <div className="following-container">
       {following?.map((follow) => {
         return (
-        <div className="following-container"> 
-          <h2>{follow.user.first_name}</h2>
-          <div className="following-image">
-          <img src={"http://127.0.0.1:8000/" + follow.profile_picture} alt="User Description" />
+          <div className="following-individual">
+            <img
+              src={"http://127.0.0.1:8000/" + follow.profile_picture}
+              alt="User Description"
+              className="following-img"
+            />
+            <div className="name-description">
+              <h2>{follow.user.first_name}</h2>
+              <p>{follow.description}</p>
+            </div>
           </div>
-          <p>{follow.description}</p>
-        </div>
-        )})}
-
+        );
+      })}
     </div>
   );
 }
 
-
-export default Following
+export default Following;

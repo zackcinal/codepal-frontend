@@ -33,3 +33,13 @@
     transition: transfrom 0.2s ease-in-out;
     color: white;
 }
+
+@media (max-width: 430px){
+    .navbarContainer{
+        flex-direction: column;
+    }
+
+    .navbarOptions{
+        margin-bottom: 10px;
+    }
+}

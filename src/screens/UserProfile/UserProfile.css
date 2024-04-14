@@ -48,14 +48,14 @@ h5 {
   font-size: 3vh;
   padding: 0;
   margin: 2vh;
-  background-color: green;
+  background-color: #01353c;
   box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
   color: white;
   transition: 0.2s ease-in-out;
   height: 6vh;
   aspect-ratio: 2.5/1;
   border-radius: 10px;
-  border: 1px solid green;
+  border: 1px solid #01353c;
 }
 
 .followBtn:hover {
@@ -97,11 +97,7 @@ h5 {
   margin: 0;
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
-}
-
-.userProfilePageOptionsBtn:hover {
-  transform: scale(1.1);
-  transition: transform 0.2s ease-in-out;
+  height: 5vh;
 }
 
 .userProfilePageDisplay {
@@ -115,8 +111,8 @@ h5 {
   margin-bottom: 3vh;
 }
 
-.add-button{
-  background-color: green;
+.userProfilePageDisplay button{
+  background-color: #01353c;
   color: white;
   border: 1px solid;
   border-radius: 5px;

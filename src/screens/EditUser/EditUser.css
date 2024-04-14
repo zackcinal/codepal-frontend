@@ -1,108 +1,119 @@
 .editUserContainer {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    padding: 10vh 0 0 0;
-    margin: 0;
-    box-sizing: border-box;
-    overflow: scroll;
-    /* background: url(../../assets/Wallpaper2.jpg); */
-    background-repeat: no-repeat;
-    background-size: 120%;
-    background-position: center;
-    background-blend-mode: 50%;
-    flex-direction: column;
-    animation: moveBackground 30s linear infinite;
-  }
-
-  @keyframes moveBackground {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10vh 0 0 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: scroll;
+  background: url(../../assets/Wallpaper2.jpg);
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-position: center;
+  background-blend-mode: 50%;
+  flex-direction: column;
+  animation: moveBackground 30s linear infinite;
 }
-  
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.editUserHeader {
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
 .editUserFormContainer {
-    display: flex;
-    justify-content: top;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    height: 90vh;
-    box-sizing: border-box;
-    margin-top: 10vh;
-    overflow: scroll;
+  display: flex;
+  justify-content: top; /* This should be 'flex-start' or 'flex-end' */
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 90vh;
+  box-sizing: border-box;
+  margin-top: 5vh;
+  overflow: auto; /* Changed to 'auto' for better handling of overflow */
+  /* border: white solid 2px; */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  */
 }
 
 .editUserInput {
-    height: 25px;
-    margin-bottom: 20px;
-    
+  height: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.editUserForm{
-    display: flex;
-    flex-direction: column;
-    width: 30vw;
-    margin: 0 0 15vh 0;
-  
-  
+#fileInput {
+  box-shadow: none;
+  border: solid white 1px;
+  padding: 5px;
+}
+
+.editUserForm {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin: 0 0 15vh 0;
 }
 
 .editUserButton {
-    width: 10vw;
-    height: 7vh;
-    align-self: center;
-    background-color: rgb(0, 128, 128);
-    border: 1px solid rgb(0, 128, 128);
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
-    font-size: larger;
+  width: 10vw;
+  height: 7vh;
+  align-self: center;
+  background-color: rgb(0, 128, 128);
+  border: 1px solid rgb(0, 128, 128);
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: larger;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .editUserForm a {
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    margin-top: 20px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .editUserForm label {
-    font-size: large;
-    font-weight: 600;
+  font-size: large;
+  font-weight: 600;
 }
 
 .editUserDanger {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .editUserDanger:hover {
-    transform: scale(1.5); 
-    font-weight: bold; 
-    background-color: lightgray; 
+  transform: scale(1.5);
+  font-weight: bold;
+  background-color: lightgray;
 }
 
-.editUserCheckbox{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.editUserCheckbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.editUserImage{
-    padding: 0;
-    margin-bottom: 3%;
-    background: url(https://cdn3.emoji.gg/emojis/2529-member-white.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 20vh;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-
+.editUserImage {
+  padding: 0;
+  margin-bottom: 3%;
+  background: url(https://cdn3.emoji.gg/emojis/2529-member-white.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 20vh;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }

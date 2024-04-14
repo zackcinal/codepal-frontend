@@ -8,7 +8,7 @@
   margin: 0;
   box-sizing: border-box;
   overflow: scroll;
-  background: url(../../assets/Wallpaper2.jpg);
+  /* background: url(../../assets/Wallpaper2.jpg); */
   background-repeat: no-repeat;
   background-size: 120%;
   background-position: center;
@@ -53,7 +53,7 @@
 
 #fileInput {
   box-shadow: none;
-  border: solid white 1px;
+  border: solid black 1px;
   padding: 5px;
 }
 

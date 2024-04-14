@@ -185,7 +185,6 @@ function EditUser({ user, profile, setUser, setProfile }) {
             onChange={handleChange}
             autoComplete="off"
             className="editUserInput"
-            id="fileInput"
           />
           <input
             type="text"

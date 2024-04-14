@@ -166,7 +166,6 @@ function EditUser({ user, profile }) {
             onChange={handleChange}
             autoComplete="off"
             className="editUserInput"
-            id="fileInput"
           />
           <input
             type="text"

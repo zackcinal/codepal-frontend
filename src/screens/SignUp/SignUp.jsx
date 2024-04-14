@@ -78,9 +78,9 @@ const Register = (props) => {
     <div className="signupContainer">
       <Navbar />
       <div className="signUpFormContainer">
-        <h1 className="signUpHeader">Sign Up</h1>
+        <h1 className="signUpHeader">SIGN UP</h1>
         <form className="signupForm" onSubmit={handleSubmit}>
-          <label htmlFor="first_name" className="signupInputLabel">First Name</label>
+          <label htmlFor="first_name" className="signupInputLabel">FIRST NAME</label>
           <input
             type="text"
             name="first_name"
@@ -92,7 +92,7 @@ const Register = (props) => {
             className="signupInput"
             style={{ textTransform: 'capitalize' }}
           />
-          <label htmlFor="last_name" className="signupInputLabel">Last Name</label>
+          <label htmlFor="last_name" className="signupInputLabel">LAST NAME</label>
           <input
             type="text"
             name="last_name"
@@ -104,7 +104,7 @@ const Register = (props) => {
             className="signupInput"
             style={{ textTransform: 'capitalize' }}
           />
-          <label htmlFor="username" className="signupInputLabel">Username</label>
+          <label htmlFor="username" className="signupInputLabel">USERNAME</label>
           <input
             type="text"
             name="username"
@@ -114,7 +114,7 @@ const Register = (props) => {
             autoComplete="off"
             className="signupInput"
           />
-          <label htmlFor="email" className="signupInputLabel">Email</label>
+          <label htmlFor="email" className="signupInputLabel">EMAIL</label>
           <input
             type="email"
             name="email"
@@ -125,7 +125,7 @@ const Register = (props) => {
             autoComplete="off"
             className="signupInput"
           />
-          <label htmlFor="password" className="signupInputLabel">Password</label>
+          <label htmlFor="password" className="signupInputLabel">PASSWORD</label>
           <input
             type="password"
             name="password"
@@ -136,7 +136,7 @@ const Register = (props) => {
             autoComplete="off"
             className="signupInput"
           />
-          <label htmlFor="confirmPassword" className="signupInputLabel">Confirm Password</label>
+          <label htmlFor="confirmPassword" className="signupInputLabel">CONFIRM PASSWORD</label>
           <input
             type="password"
             name="confirmPassword"
@@ -147,7 +147,7 @@ const Register = (props) => {
             autoComplete="off"
             className="signupInput"
           />
-          <label htmlFor="profile_picture" className="signupInputLabel">Profile Picture</label>
+          <label htmlFor="profile_picture" className="signupInputLabel">PROFILE PICTURE</label>
           <input
             type="file"
             name="profile_picture"
@@ -156,7 +156,7 @@ const Register = (props) => {
             autoComplete="off"
             className="signupInput"
           />
-          <label htmlFor="description" className="signupInputLabel">Description</label>
+          <label htmlFor="description" className="signupInputLabel">DESCRIPTION</label>
           <input
             type="text"
             name="description"
@@ -167,7 +167,7 @@ const Register = (props) => {
             autoComplete="off"
             className="signupInput"
           />
-          <label htmlFor="location" className="signupInputLabel">Location</label>
+          <label htmlFor="location" className="signupInputLabel">LOCATION</label>
           <input
             type="text"
             name="location"
@@ -177,7 +177,7 @@ const Register = (props) => {
             autoComplete="off"
             className="signupInput"
           />
-          <label htmlFor="portfolio_link" className="signupInputLabel">Portfolio Link</label>
+          <label htmlFor="portfolio_link" className="signupInputLabel">PORTFOLIO LINK</label>
           <input
             type="text"
             name="portfolio_link"
@@ -188,7 +188,7 @@ const Register = (props) => {
             autoComplete="off"
             className="signupInput"
           />
-          <label htmlFor="role" className="signupInputLabel">Select a role</label>
+          <label htmlFor="role" className="signupInputLabel">SELECT YOUR ROLE</label>
           <select
             name="role"
             value={form.role}

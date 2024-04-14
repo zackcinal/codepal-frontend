@@ -1,67 +1,68 @@
-.signinContainer{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.signinContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.homeFormSignIn{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
+.homeFormSignIn {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
 }
 
 .homeFormSignIn input {
-    height: 25px;
-    margin-bottom: 20px;
+  height: 25px;
+  margin-bottom: 20px;
 }
 
 .homeFormSignIn button {
-    width: 10vw;
-    height: 7vh;
-    align-self: center;
-    background-color: green;
-    border: 1px solid green;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
-    font-size: larger;
+  width: 10vw;
+  height: 7vh;
+  align-self: center;
+  background-color: green;
+  border: 1px solid green;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: larger;
 }
 
-.homeFormSignIn a{
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    margin-top: 20px;
+.homeFormSignIn a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  margin-top: 20px;
 }
 
-.homeFormSignIn label{
-    font-size: large;
-    font-weight: 600;
+.homeFormSignIn label {
+  font-size: large;
+  font-weight: 600;
 }
 
-.singUpLink{
-    text-align: center;
+.singUpLink {
+  text-align: center;
+}
 
+.signUpP {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.linkSignUp {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease;
+  font-weight: 600;
 }
 
 
+@media (max-width: 430px) {
+  .homeFormSignIn{
+    width: 90vw;
+  }
 
-.signUpP{
-    margin-top: 20px;
+  .homeFormSignIn button{
+    width: 30vw;
+  }
 }
-
-
-.linkSignUp{
-    text-decoration: none;
-    color: black;
-    transition: all 0.3s ease;
-}
-
-
-.linkSignUp:hover {
-    transform: scale(1.5); 
-    font-weight: bold; 
-    background-color: lightgray; 
-}
-

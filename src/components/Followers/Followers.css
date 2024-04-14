@@ -1,0 +1,21 @@
+.follower-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.followers-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.follower-individual{
+    display: flex;
+    height: 18vh;
+    align-items: center;
+    border-bottom: 1px solid;
+}
+
+.name-description{
+    margin-left: 2vw;
+}

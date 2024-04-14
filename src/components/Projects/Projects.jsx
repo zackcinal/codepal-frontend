@@ -23,16 +23,16 @@ function Projects(profilePage) {
     fetchProjects();
   }, []);
 
-useEffect(() => {
-  async function fetchLikes () {
-    const response = await getLikesUnlikes()
-    setLikes(response.likes)
-    setUnLikes(response.unLikes)
-  }
+// useEffect(() => {
+//   async function fetchLikes () {
+//     const response = await getLikesUnlikes()
+//     setLikes(response.likes)
+//     setUnLikes(response.unLikes)
+//   }
 
-fetchLikes()
+// fetchLikes()
 
-}, [])
+// }, [])
 
 
   async function handleDelete(profileId, projectId) {

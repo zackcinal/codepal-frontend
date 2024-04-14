@@ -3,7 +3,6 @@
   padding: 10vh 0 0 0;
   margin: 0;
   box-sizing: border-box;
-  overflow: scroll;
   display: flex;
   justify-items: center;
   align-items: center;
@@ -19,14 +18,34 @@
   flex-wrap: wrap;
 }
 
+.mainPageScreen{
+  height: 75vh;
+}
+
 ul.mainPageOptions {
   display: flex;
   flex-direction: row;
   list-style: none;
-  gap: 10vw;
   cursor: pointer;
+  margin-top: 0;
+}
+
+.react-tabs__tab{
+  padding-left: 5vw;
+  padding-right: 5vw;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .react-tabs__tab--selected{
-    text-decoration: underline;
+    background-color: #01353c;
+    color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.react-tabs__tab:hover{
+  background-color: #01353cb6;
+  transition: 0.3s ease-in-out;
+  color: white;
 }

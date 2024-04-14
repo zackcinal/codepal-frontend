@@ -102,6 +102,9 @@ Additionally, you can navigate through various tabs to explore a person's projec
 
 In this page you can edit your profile and delete the user. 
 
+![Screenshot from 2024-04-14 12-26-14](https://github.com/zackcinal/codepal-frontend/assets/90149052/4ce121f3-ddb3-4412-a0fa-15b0d1299d73)
+
+
 
 
 

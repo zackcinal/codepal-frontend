@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useParams } from "react";
 import { useNavigate } from "react-router-dom";
-import { updateUser } from "../../services/users.js";
+import { updateUser, deleteUser, signOut } from "../../services/users.js";
 import "./EditUser.css";
 import Navbar from "../../components/NavBar/Navbar.jsx";
 
-function EditUser({ user, profile }) {
+function EditUser({ user, profile, setUser, setProfile }) {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -101,6 +101,25 @@ function EditUser({ user, profile }) {
       );
     }
   };
+
+    
+    
+  const handleDeleteUser = async () => {
+    if (window.confirm("Are you sure you want to delete your profile?")) {
+      try {
+        await deleteUser(user.id);
+        await signOut()
+        // Redirect or show success message
+        setUser(null);
+        setProfile(null);
+        navigate("/"); // Redirect to home or another appropriate page
+      } catch (error) {
+        console.error("Error deleting profile:", error);
+        // Handle error: display an error message
+      }
+    }
+  };
+
 
   return (
     <div className="editUserContainer">
@@ -211,6 +230,11 @@ function EditUser({ user, profile }) {
           {renderError()}
         </form>
       </div>
+
+      <div>
+          <button className="deleteButton" onClick={handleDeleteUser}>Delete Profile</button>
+        </div>
+
     </div>
   );
 }

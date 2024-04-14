@@ -60,7 +60,7 @@ function App() {
         {user && (
           <Route
             path="/users/edit"
-            element={<EditUser user={user} profile={profile} />}
+            element={<EditUser user={user} profile={profile} setUser={setUser} setProfile={setProfile} />}
           />
         )}
         <Route

@@ -8,8 +8,8 @@ import { verifyUser } from "../../services/users.js";
 
 function Projects(profilePage) {
   const [projects, setProjects] = useState([]);
-  const [likes, setLikes] = useState({});
-  const [unLikes, setUnLikes] = useState({});
+  // const [likes, setLikes] = useState({});
+  // const [unLikes, setUnLikes] = useState({});
 
   const [isCurrentUser, setIsCurrentUser] = useState (false)
 
@@ -38,18 +38,18 @@ function Projects(profilePage) {
     checkIfUserIsTheSame()
    }, [useParams()])
 
-useEffect(() => {
-  async function fetchLikes() {
-    console.log(projects)
-    const response = projects.length > 0 && await getLikesUnlikes(projects[0]?.id)
-    console.log(response)
-    setLikes(response.likes)
-    setUnLikes(response.unLikes)
-  }
+// useEffect(() => {
+//   async function fetchLikes() {
+//     console.log(projects)
+//     const response = projects.length > 0 && await getLikesUnlikes(projects[0]?.id)
+//     console.log(response)
+//     setLikes(response.likes)
+//     setUnLikes(response.unLikes)
+//   }
 
-fetchLikes()
+// fetchLikes()
 
-}, [projects])
+// }, [projects])
 
 
   async function handleDelete(profileId, projectId) {

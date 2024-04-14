@@ -6,12 +6,11 @@ import Projects from "../../components/Projects/Projects.jsx";
 import Reviews from "../../components/Reviews/Reviews.jsx";
 import Followers from "../../components/Followers/Followers.jsx";
 import Following from "../../components/Following/Following.jsx";
-import { getProfile } from "../../services/users.js";
+import { getProfile, verifyUser } from "../../services/users.js";
 import { getFollowerFollowings } from "../../services/follows.js";
 import { useParams } from "react-router-dom";
 import CreateProject from "../../components/Projects/CreateProject";
 import { Link } from "react-router-dom";
-
 
 
 function UserProfile({profile}) {
@@ -19,6 +18,8 @@ function UserProfile({profile}) {
   const [followers, setFollowers] = useState([]);
   const [following, setFollowing] = useState([]);
   const [userProfile, setUserProfile] = useState (null)
+  const [isCurrentUser, setIsCurrentUser] = useState (false)
+  
 
   const { profileId } = useParams()
 
@@ -54,6 +55,16 @@ function UserProfile({profile}) {
     fetchFollows()
   }, [])
 
+  useEffect(() => {
+   async function checkIfUserIsTheSame() {
+    const user = await verifyUser()
+
+    if (user.profile.id == profileId) setIsCurrentUser(true)
+   } 
+
+   checkIfUserIsTheSame()
+  }, [])
+
 
   return (
     <div className="userProfilePageContainer">
@@ -70,9 +81,25 @@ function UserProfile({profile}) {
          <h5 className="profileLocation">{userProfile?.location}</h5>
          <h3 className="profileRole">{userProfile?.role}</h3>
          <h4 className="profileDescription">{userProfile?.description}</h4>
-         <Link to="/users/edit">
+                 
+        {
+
+          isCurrentUser ? 
+          
+          // if this is the user who is logged in
+          <Link to="/users/edit">
           <button className="followBtn">Edit Profile</button>
          </Link>
+         :
+        // if it is not the logged in user
+
+         <Link to="/users/follow">
+          <button className="followBtn">Follow</button>
+         </Link>
+        }
+         
+
+        
     </div>
 
     <Tabs className="userProfilePageScreen">

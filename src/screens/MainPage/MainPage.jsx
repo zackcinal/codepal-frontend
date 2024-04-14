@@ -59,7 +59,7 @@ function MainPage({profile}) {
 
         <TabPanel>
           <div className="mainPageDisplay">
-            <h1>Developers</h1>
+            <h1 className="tabTitle">Developers</h1>
             <div className="profilesContainer">
               {profiles.map((currentProfile) => (
                 <UserPreview profile={currentProfile} key={currentProfile.id} myProfile={profile} isFollowed={followingIds?.includes(currentProfile.id)} checkIfFollowed={checkIfFollowed} />
@@ -69,7 +69,7 @@ function MainPage({profile}) {
         </TabPanel>
         <TabPanel>
           <div className="mainPageDisplay">
-            <h1>Full Stack</h1>
+            <h1 className="tabTitle">Full Stack</h1>
             <div className="profilesContainer">
               {profiles.map((currentProfile) =>
                 currentProfile.role === "FS" ? (
@@ -81,7 +81,7 @@ function MainPage({profile}) {
         </TabPanel>
         <TabPanel>
           <div className="mainPageDisplay">
-            <h1>Front End</h1>
+            <h1 className="tabTitle">Front End</h1>
             <div className="profilesContainer">
               {profiles.map((currentProfile) =>
                 currentProfile.role === "FE" ? (
@@ -93,7 +93,7 @@ function MainPage({profile}) {
         </TabPanel>
         <TabPanel>
           <div className="mainPageDisplay">
-            <h1>Back End</h1>
+            <h1 className="tabTitle">Back End</h1>
             <div className="profilesContainer">
               {profiles.map((currentProfile) =>
                 currentProfile.role === "BE" ? (

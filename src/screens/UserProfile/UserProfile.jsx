@@ -65,7 +65,6 @@ function UserProfile({profile}) {
    checkIfUserIsTheSame()
   }, [])
 
-
   return (
     <div className="userProfilePageContainer">
       <div className="userProfilePageProfileContainer">

@@ -89,9 +89,9 @@ function UserProfile({ profile }) {
         ) : (
           // if it is not the logged in user
           <div>
-            <Link to="/users/follow">
+            {/* <Link to="/users/follow">
               <button className="followBtn">Follow</button>
-            </Link>
+            </Link> */}
             <button onClick={redirectToEmail} className="send-email-to">Send an Email!</button>
           </div>
         )}

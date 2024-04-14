@@ -3,7 +3,6 @@ import "./Reviews.css";
 
 function Reviews({ review }) {
   return (
-    <div className="">
     <div className="review-item">
       
       <div className="review-image">
@@ -21,7 +20,6 @@ function Reviews({ review }) {
        
         <p>{review.review}</p>
       </div>
-    </div>
     </div>
   );
 }

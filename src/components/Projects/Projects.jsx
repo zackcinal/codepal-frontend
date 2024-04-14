@@ -6,8 +6,8 @@ import { getLikesUnlikes } from '../../services/likes.js'
 
 function Projects(profilePage) {
   const [projects, setProjects] = useState([]);
-  const [likes, setLikes] = useState({});
-  const [unLikes, setUnLikes] = useState({});
+  // const [likes, setLikes] = useState({});
+  // const [unLikes, setUnLikes] = useState({});
 
   let { profileId } = useParams();
 

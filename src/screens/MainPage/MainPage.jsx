@@ -105,7 +105,7 @@ function MainPage({profile}) {
         </TabPanel>
         <TabPanel>
           <div className="mainPageDisplay">
-            <h1>User Experience</h1>
+            <h1 className="tabTitle">User Experience</h1>
             <div className="profilesContainer">
               {profiles.map((currentProfile) =>
                 currentProfile.role === "UX" ? (

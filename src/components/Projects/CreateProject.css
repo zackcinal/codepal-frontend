@@ -16,6 +16,7 @@
     background-color: rgb(0, 128, 128);
     color: white;
     cursor: pointer;
+    font-family: 'Unbounded', 'sans';
 }
 
 .create-form input, .input-description{
@@ -30,4 +31,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.create-project-heading h2{
+    font-family: 'Lato', 'sans';
 }

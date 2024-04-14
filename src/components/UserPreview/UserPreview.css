@@ -1,74 +1,60 @@
-.profileCard{
-    height: 40vh;
-    width: 30vh;
-    margin: 2vh;
-    border-radius: 30px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: top;
-    flex-direction: column;
-    justify-content: space-between;
-    color: black;
-    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
-    padding: 2vh;
-    text-align: center;
-    transition: transform 0.2s ease-in-out;
-    border: 1px;
+.profileCard {
+  height: 40vh;
+  width: 30vh;
+  margin: 1vh;
+  border-radius: 30px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: top;
+  flex-direction: column;
+  justify-content: space-between;
+  color: black;
+  padding: 2vh;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  border: 1px;
 }
 
-.profileCard:hover{
-    transform: scale(1.1);
-    transition: transform 0.2s ease-in-out;
-}
-
-.profileCard h2, h4, h5{
-    padding: 0;
-    margin: 0;
-}
-
-.profileCard img{
-    padding: 0;
-    margin: 0;
-    background: url(https://cdn3.emoji.gg/emojis/2529-member-white.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 20vh;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
+.profileCard h2{
+    font-family: "Unbounded", sans-serif;
+    padding-bottom: 10px;
 }
 
 .profileCard h4{
-    font-weight: 300;
-}
-
-.profileCard h5{
-    font-weight: 100;
-}
-
-
-.profileCardFollowBtn{
-    width: 15vw;
-    font-size: 2vh;
-    padding: 0;
-    margin: 1vh;
-    background-color: rgb(0, 128, 128);
-    border: 1px solid rgb(0, 128, 128);
-    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
-    color: white;
-    transition: 0.2s ease-in-out;
-    height: 3vh;
-    aspect-ratio: 3/1;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.profileCardFollowBtn:hover{
-    background-color: rgb(19, 33, 111);
-    color: white;
-    transform: scale(1.05);
-    transition: transform 0.2s ease-in-out;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  padding-bottom: 10px;
 }
 
 
+.profileCard img {
+  padding: 0;
+  margin: 0;
+  background: url(https://cdn3.emoji.gg/emojis/2529-member-white.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 20vh;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.profileCardFollowBtn {
+  width: 15vw;
+  font-size: 2vh;
+  padding: 0;
+  margin: 1vh;
+  background-color: rgb(0, 128, 128);
+  border: 1px solid rgb(0, 128, 128);
+  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
+  color: white;
+  transition: 0.2s ease-in-out;
+  height: 3vh;
+  aspect-ratio: 3/1;
+  border-radius: 10px;
+  cursor: pointer;
+}

@@ -11,6 +11,10 @@
   flex-direction: column;
 }
 
+.homeFormSignIn h1{
+  font-family: 'Unbounded', 'sans';
+}
+
 .homeFormSignIn input {
   height: 25px;
   margin-bottom: 20px;

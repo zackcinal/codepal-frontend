@@ -59,7 +59,7 @@ function Projects(profilePage) {
             </div>
             <div>
               <h2>{project.title}</h2>
-              <p>{project.project_description}</p>
+              <p className="project-description-p">{project.project_description}</p>
               <Link to={project.project_link} target="_blank">
                 <h4>View Project</h4>
               </Link>

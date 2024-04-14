@@ -1,45 +1,96 @@
-.navbarContainer{
-    background-color: rgb(0, 33, 111);
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    padding: 0 2vh;
-    position: absolute;
-    top: 0;
-    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
-    z-index: 9999;
+.navbarContainer {
+  background-color: rgb(0, 33, 111);
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 2vh;
+  position: absolute;
+  top: 0;
+  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
+  z-index: 9999;
 }
 
-.navbarBtn{
-    border: transparent;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    background-color: transparent;
-    color:#e9e6e2;
-    transition: transform 0.2s ease-in;
-    height: 100%;
-    margin: 0 3vh;
-    font-size: 20px; 
-    border-radius: 5px;
+.navbarBtn {
+  border: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  color: #e9e6e2;
+  transition: transform 0.2s ease-in;
+  height: 100%;
+  margin: 0 3vh;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: "Unbounded", sans-serif;
 }
 
-.navbarBtn:hover{
-    transform: scale(1.1);
-    transition: transfrom 0.2s ease-in-out;
+.navbarOptions{
+    font-family: "Lato", sans-serif;
+}
+
+.navbarBtn:hover {
+  transform: scale(1.1);
+  transition: transfrom 0.2s ease-in-out;
+  color: white;
+  cursor: pointer;
+}
+
+.about-us a p{
+  margin-top: 0;
+}
+
+.hire{
+    display: contents;
+}
+
+.hire-text {
     color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(25, end) forwards;
+    margin-left: -650px;
+    font-family: "Lato", sans-serif;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 11%;
+    }
+  }
+
+@media (max-width: 430px) {
+  .navbarContainer {
+    flex-direction: column;
+  }
+
+  .navbarOptions {
+    margin-bottom: 10px;
+  }
+
 }
 
-@media (max-width: 430px){
-    .navbarContainer{
-        flex-direction: column;
+@media (max-width: 1300px) {
+    .hire-text{
+        margin-left: -350px;
     }
+}
 
-    .navbarOptions{
-        margin-bottom: 10px;
+@media (max-width: 1100px) {
+    .hire-text{
+        margin-left: -200px;
+    }
+}
+
+@media (max-width: 920px) {
+    .hire-text{
+        margin-left: -100px;
     }
 }

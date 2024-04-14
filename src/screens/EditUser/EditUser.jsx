@@ -104,7 +104,7 @@ function EditUser({ user, profile }) {
 
   return (
     <div className="editUserContainer">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="editUserFormContainer">
         
         <h1 className="editUserHeader">Edit User</h1>

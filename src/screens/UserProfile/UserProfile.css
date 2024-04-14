@@ -48,14 +48,14 @@ h5 {
   font-size: 3vh;
   padding: 0;
   margin: 2vh;
-  background-color: #01353c;
+  background-color: rgb(0, 128, 128);
   box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
   color: white;
   transition: 0.2s ease-in-out;
   height: 6vh;
   aspect-ratio: 2.5/1;
   border-radius: 10px;
-  border: 1px solid #01353c;
+  border: 1px solid rgb(0, 128, 128);
 }
 
 .followBtn:hover {
@@ -112,7 +112,7 @@ h5 {
 }
 
 .userProfilePageDisplay button{
-  background-color: #01353c;
+  background-color: rgb(0, 128, 128);
   color: white;
   border: 1px solid;
   border-radius: 5px;

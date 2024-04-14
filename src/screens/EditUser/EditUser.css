@@ -1,10 +1,30 @@
-.signupContainer {
+.editUserContainer {
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+    padding: 10vh 0 0 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: scroll;
+    /* background: url(../../assets/Wallpaper2.jpg); */
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: center;
+    background-blend-mode: 50%;
+    flex-direction: column;
+    animation: moveBackground 30s linear infinite;
   }
+
+  @keyframes moveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
   
 
 .editUserFormContainer {
@@ -12,7 +32,7 @@
     justify-content: top;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 50%;
     height: 90vh;
     box-sizing: border-box;
     margin-top: 10vh;
@@ -22,6 +42,7 @@
 .editUserInput {
     height: 25px;
     margin-bottom: 20px;
+    
 }
 
 .editUserForm{
@@ -30,14 +51,15 @@
     width: 30vw;
     margin: 0 0 15vh 0;
   
+  
 }
 
 .editUserButton {
     width: 10vw;
     height: 7vh;
     align-self: center;
-    background-color: green;
-    border: 1px solid green;
+    background-color: rgb(0, 128, 128);
+    border: 1px solid rgb(0, 128, 128);
     border-radius: 5px;
     cursor: pointer;
     color: white;
@@ -70,4 +92,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.editUserImage{
+    padding: 0;
+    margin-bottom: 3%;
+    background: url(https://cdn3.emoji.gg/emojis/2529-member-white.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 20vh;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+
 }

@@ -4,7 +4,7 @@ import { updateUser } from "../../services/users.js";
 import "./EditUser.css";
 import Navbar from "../../components/NavBar/Navbar.jsx";
 
-function EditUser({user, profile}) {
+function EditUser({ user, profile }) {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -27,7 +27,7 @@ function EditUser({user, profile}) {
     const { name, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
 
-    setForm(prevForm => ({
+    setForm((prevForm) => ({
       ...prevForm,
       [name]: newValue,
     }));
@@ -47,7 +47,7 @@ function EditUser({user, profile}) {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0]; // Assuming only one file is selected
-    setForm(prevForm => ({
+    setForm((prevForm) => ({
       ...prevForm,
       profile_picture: file,
     }));
@@ -57,22 +57,22 @@ function EditUser({user, profile}) {
     event.preventDefault();
 
     const formData = new FormData();
-    formData.append('user[first_name]', form.user.first_name);
-    formData.append('user[last_name]', form.user.last_name);
-    formData.append('user[username]', form.user.username);
-    formData.append('user[email]', form.user.email);
-    formData.append('description', form.description);
-    formData.append('location', form.location);
-    formData.append('portfolio_link', form.portfolio_link);
-    formData.append('role', form.role);
-    formData.append('is_developer', form.is_developer);
+    formData.append("user[first_name]", form.user.first_name);
+    formData.append("user[last_name]", form.user.last_name);
+    formData.append("user[username]", form.user.username);
+    formData.append("user[email]", form.user.email);
+    formData.append("description", form.description);
+    formData.append("location", form.location);
+    formData.append("portfolio_link", form.portfolio_link);
+    formData.append("role", form.role);
+    formData.append("is_developer", form.is_developer);
 
     if (form.profile_picture) {
-        formData.append('profile_picture', form.profile_picture);
+      formData.append("profile_picture", form.profile_picture);
     }
 
     try {
-      await updateUser(formData);  // Make sure updateUser can handle FormData
+      await updateUser(formData); // Make sure updateUser can handle FormData
       navigate(`/userprofile/${profile.id}`);
     } catch (error) {
       console.error(error);
@@ -95,8 +95,10 @@ function EditUser({user, profile}) {
       );
     } else {
       return (
-        <button type="submit" className="editUserButton">Update</button>
-      )
+        <button type="submit" className="editUserButton">
+          Update
+        </button>
+      );
     }
   };
 
@@ -104,8 +106,10 @@ function EditUser({user, profile}) {
     <div className="editUserContainer">
       <Navbar />
       <div className="editUserFormContainer">
+        <div></div>
         <h1 className="editUserHeader">Edit User</h1>
-        <form className="editUserForm" onSubmit={handleSubmit} >
+        <img className="editUserImage" src={`http://127.0.0.1:8000${profile.profile_picture}`} alt="Profile Picture" />
+        <form className="editUserForm" onSubmit={handleSubmit}>
           {/* <input
             type="text"
             name="first_name"
@@ -142,6 +146,9 @@ function EditUser({user, profile}) {
             autoComplete="off"
             className="editUserInput"
           /> */}
+          
+          
+          
           <input
             type="file"
             name="profile_picture"

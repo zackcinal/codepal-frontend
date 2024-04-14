@@ -1,6 +1,6 @@
 .footerMainPage {
   width: 100%;
-  height: 10vh;
+  height: 25vh;
   background-color: rgb(19, 33, 111);
   display: flex;
   flex-direction: row;
@@ -89,7 +89,7 @@
   width: 50px;
 }
 
-
+/* test */
 /* .footerCreators{
     display: flex;
     justify-content: center;

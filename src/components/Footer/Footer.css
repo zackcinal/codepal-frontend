@@ -1,6 +1,6 @@
 .footerMainPage {
   width: 100%;
-  height: 35vh;
+  height: 25vh;
   background-color: rgb(19, 33, 111);
   display: flex;
   flex-direction: row;
@@ -9,17 +9,15 @@
   text-align: center;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: fixed; 
   bottom: 0;
 }
 
 .about-us {
   margin-right: 30px;
   z-index: 1;
-  position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 20vh;
   align-items: center;
 }
 
@@ -90,6 +88,7 @@
 .logo {
   width: 50px;
 }
+
 
 /* .footerCreators{
     display: flex;

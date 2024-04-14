@@ -3,11 +3,16 @@ import { Link, useParams } from "react-router-dom";
 import { getProjects, deleteProject } from "../../services/projects.js";
 import "./Projects.css";
 import { getLikesUnlikes } from '../../services/likes.js'
+import { verifyUser } from "../../services/users.js";
+
 
 function Projects(profilePage) {
   const [projects, setProjects] = useState([]);
-  // const [likes, setLikes] = useState({});
-  // const [unLikes, setUnLikes] = useState({});
+  const [likes, setLikes] = useState({});
+  const [unLikes, setUnLikes] = useState({});
+
+  const [isCurrentUser, setIsCurrentUser] = useState (false)
+
 
   let { profileId } = useParams();
 
@@ -23,16 +28,28 @@ function Projects(profilePage) {
     fetchProjects();
   }, []);
 
-// useEffect(() => {
-//   async function fetchLikes () {
-//     const response = await getLikesUnlikes()
-//     setLikes(response.likes)
-//     setUnLikes(response.unLikes)
-//   }
+  useEffect(() => {
+    async function checkIfUserIsTheSame() {
+     const user = await verifyUser()
+ 
+     if (user.profile.id == profileId) setIsCurrentUser(true)
+    } 
+ 
+    checkIfUserIsTheSame()
+   }, [useParams()])
 
-// fetchLikes()
+useEffect(() => {
+  async function fetchLikes() {
+    console.log(projects)
+    const response = projects.length > 0 && await getLikesUnlikes(projects[0]?.id)
+    console.log(response)
+    setLikes(response.likes)
+    setUnLikes(response.unLikes)
+  }
 
-// }, [])
+fetchLikes()
+
+}, [projects])
 
 
   async function handleDelete(profileId, projectId) {
@@ -47,9 +64,13 @@ function Projects(profilePage) {
 
   return (
     <div>
+      {
+         isCurrentUser ? 
       <Link to="/createproject">
         <button className="add-button">Add Project</button>
       </Link>
+      : null
+}
       <div className="project-list">
         {projects.map((project) => (
           <div key={project.id} className="project-item">

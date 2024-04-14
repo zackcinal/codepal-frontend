@@ -9,11 +9,11 @@ export const getLikes = async () => {
     }
 }
 
-export const getLikesUnlikes = async () => {
+export const getLikesUnlikes = async (id) => {
     try {
         const response = await api.get(`/likes/`)
         return response.data
     } catch (error) {
         throw error;
     }
-}
+} 

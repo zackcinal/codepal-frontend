@@ -68,14 +68,14 @@
 }
 
 .signupForm select:focus {
-  border-color: green;
+  border-color: rgb(0, 128, 128);
 }
 
 .signUpButton {
   width: 12vw;
   height: 7vh;
   align-self: center;
-  background-color: green;
+  background-color: rgb(0, 128, 128);
   border: 1px solid black;
   border-radius: 5px;
   cursor: pointer;

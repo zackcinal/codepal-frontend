@@ -106,7 +106,7 @@ function EditUser({ user, profile }) {
     <div className="editUserContainer">
       <Navbar />
       <div className="editUserFormContainer">
-        <div></div>
+        
         <h1 className="editUserHeader">Edit User</h1>
         <img className="editUserImage" src={`http://127.0.0.1:8000${profile.profile_picture}`} alt="Profile Picture" />
         <form className="editUserForm" onSubmit={handleSubmit}>
@@ -150,6 +150,7 @@ function EditUser({ user, profile }) {
           
           
           <input
+            id="fileInput"
             type="file"
             name="profile_picture"
             accept="image/jpeg,image/png,image/gif"

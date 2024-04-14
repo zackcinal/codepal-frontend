@@ -1,4 +1,6 @@
 .profilesContainer {
+  height: 40vh;
+  
   width: 100vw; /* Adjust this width as needed */
   display: flex;
   justify-content: flex-start; 

@@ -71,6 +71,10 @@
   border-color: rgb(0, 128, 128);
 }
 
+.signUpHeader{
+  font-family: 'Unbounded', 'sans';
+}
+
 .signUpButton {
   width: 12vw;
   height: 7vh;

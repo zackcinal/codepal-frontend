@@ -1,6 +1,5 @@
 .profilesContainer {
-  height: 40vh;
-  
+  height: 70vh;
   width: 100vw; /* Adjust this width as needed */
   display: flex;
   justify-content: flex-start; 
@@ -9,6 +8,7 @@
   flex-wrap: wrap; 
   overflow: auto; /* Changed to auto for better handling of overflow */
   padding: 10px; /* Add padding as needed */
+  margin-left: 10vw;
 }
 
 .mainPageContainer {
@@ -23,7 +23,7 @@
 }
 
 .mainPageScreen {
-  height: 75vh;
+  height: 90vh;
 }
 
 ul.mainPageOptions {
@@ -32,6 +32,9 @@ ul.mainPageOptions {
   list-style: none;
   cursor: pointer;
   margin-top: 0;
+  justify-content: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
 }
 
 .react-tabs__tab {
@@ -44,9 +47,6 @@ ul.mainPageOptions {
 .react-tabs__tab--selected {
   background-color: rgb(0, 128, 128);
   color: white;
-  border-radius: 50%;
-  text-shadow: black 5px;
-  margin-top: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -55,9 +55,10 @@ ul.mainPageOptions {
   background-color: rgb(0, 128, 128);
   transition: 0.3s ease-in-out;
   color: white;
-  border-radius: 20%;
 }
 
 .tabTitle {
   text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
 }

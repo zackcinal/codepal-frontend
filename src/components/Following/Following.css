@@ -8,7 +8,11 @@
     display: flex;
     height: 18vh;
     align-items: center;
-    border-bottom: 1px solid;
+    border: 1px solid;
+    width: 30vw;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f7f7f7;
 }
 
 .name-description{
@@ -16,4 +20,11 @@
     flex-direction: column;
     justify-content: center;
     margin-left: 2vw;
+    font-family: "Lato", sans-serif;
+}
+
+.following-container{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }

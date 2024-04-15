@@ -1,5 +1,5 @@
 .profileCard {
-  height: 40vh;
+  height: 45vh;
   width: 30vh;
   margin: 1vh;
   border-radius: 30px;
@@ -16,19 +16,18 @@
   border: 1px;
 }
 
-.profileCard h2{
-    font-family: "Unbounded", sans-serif;
-    padding-bottom: 10px;
+.profileCard h2 {
+  font-family: "Unbounded", sans-serif;
+  padding-bottom: 10px;
 }
 
-.profileCard h4{
+.profileCard h4 {
   padding: 0;
   margin: 0;
   font-family: "Lato", sans-serif;
   font-weight: 500;
   padding-bottom: 10px;
 }
-
 
 .profileCard img {
   padding: 0;
@@ -57,4 +56,30 @@
   aspect-ratio: 3/1;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.profileCardFollowers button {
+  width: 11vw;
+  font-size: 2vh;
+  padding: 0;
+  margin: 1vh;
+  background-color: rgb(0, 128, 128);
+  border: 1px solid rgb(0, 128, 128);
+  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18);
+  color: white;
+  transition: 0.2s ease-in-out;
+  height: 3vh;
+  aspect-ratio: 3 / 1;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 430px) {
+  .profileCardFollowers{
+    flex-direction: column;
+  }
+
+  .profileCardFollowers button{
+    width: 50vw;
+  }
 }

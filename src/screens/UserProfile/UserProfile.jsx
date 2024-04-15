@@ -65,7 +65,6 @@ function UserProfile({ profile }) {
 
     checkIfUserIsTheSame();
   }, []);
-
   return (
     <div className="userProfilePageContainer">
       <div className="userProfilePageProfileContainer">
@@ -78,7 +77,16 @@ function UserProfile({ profile }) {
           {userProfile?.user.first_name} {userProfile?.user.last_name}
         </h1>
         <h5 className="profileLocation">{userProfile?.location}</h5>
-        <h3 className="profileRole">{userProfile?.role}</h3>
+        <h3 className="profileRole">
+          {userProfile?.role == "FS" 
+          ? "Full Stack" 
+          : userProfile?.role == "FE"
+          ? "Front End"
+          : userProfile?.role == "BE"
+          ? "Back End"
+          : userProfile?.role == "UX"
+          ? "User Experience"
+          :  ""}</h3>
         <h4 className="profileDescription">{userProfile?.description}</h4>
 
         {isCurrentUser ? (

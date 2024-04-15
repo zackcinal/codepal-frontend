@@ -4,6 +4,10 @@ import "../../assets/abdoul.png";
 import { Link } from "react-router-dom";
 
 function Footer() {
+
+  async function handleSend(){
+    window.confirm("Email Sent! We will be in touch as soon as possible.")
+  }
   return (
     <div className="footerMainPage">
       <div className="contact-us-container">
@@ -17,13 +21,13 @@ function Footer() {
               placeholder="Write us..."
               required
             />
-            <button className="email-button">SEND</button>
+            <button className="email-button" onClick={handleSend}>SEND</button>
           </div>
         </div>
       </div>
       <div>
         <div className="about-us">
-          <a href="https://github.com/zackcinal/codepal-frontend">
+          <a href="https://github.com/zackcinal/codepal-frontend" target="_blank">
             <img
               src="https://pngimg.com/uploads/github/github_PNG63.png"
               alt="github-logo"
@@ -53,49 +57,3 @@ function Footer() {
 }
 
 export default Footer;
-
-{
-  /* </div>
-      <h3 className="footerTitle">{` < About Us />`}</h3>
-      <div className="footerCreators">
-        <a href="https://github.com/arehmanlatif1" target="_blank">
-          <div className="creatorProfile">
-            <div className="creatorProfilePicture" id="abdoul"></div>
-            <div>
-              ABDOUL
-              <br />
-              REHMAN
-            </div>
-          </div>
-        </a>
-        <a href="https://devportfolioant.netlify.app/" target="_blank">
-          <div className="creatorProfile">
-            <div className="creatorProfilePicture" id="antonio"></div>
-            <div>
-              ANTONIO
-              <br />
-              FELIX
-            </div>
-          </div>
-        </a>
-        <a href="https://www.cesariparrea.com" target="_blank">
-          <div className="creatorProfile">
-            <div className="creatorProfilePicture" id="cesar"></div>
-            <div>
-              CESAR
-              <br />
-              IPARREA
-            </div>
-          </div>
-        </a>
-        <a href="https://www.zackcinal.com" target="_blank">
-          <div className="creatorProfile">
-            <div className="creatorProfilePicture" id="zack"></div>
-            <div>
-              ZACK
-              <br />
-              CINAL
-            </div>
-          </div>
-        </a> */
-}

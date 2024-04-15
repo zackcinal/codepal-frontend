@@ -7,28 +7,25 @@
   color: #000000;
 }
 
-.about-icon{
-    display: flex;
-    justify-content: center;
-    
+.about-icon {
+  display: flex;
+  justify-content: center;
 }
 
 .about-dev {
-    width: 30%; 
-    background: #ffffff;
-    text-align: center;
-    font-family: "Space Mono";
-    border-radius: 1em;
-    padding: 2em 3em;
-    transition: all 0.25s ease-in-out;
-    border: black solid 2px;
-    margin-left: auto; 
-    margin-right: auto;
-    margin-bottom: 2vh;
-    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18); /* Box shadow property */
+  width: 30%;
+  background: #ffffff;
+  text-align: center;
+  font-family: "Space Mono";
+  border-radius: 1em;
+  padding: 2em 3em;
+  transition: all 0.25s ease-in-out;
+  border: black solid 2px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2vh;
+  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.18); /* Box shadow property */
 }
-
-  
 
 .about-dev:hover {
   background: #01353c;
@@ -43,7 +40,6 @@
   margin: 20px 0 1px 0 !important;
   text-transform: uppercase;
   transition: all 0.25s ease-in-out;
-  
 }
 
 .about-dev:hover h1 {
@@ -51,14 +47,11 @@
 }
 
 .dev-info {
- 
   margin-bottom: 0;
   font-family: "Space Mono";
   font-style: italic;
   color: #000000;
 }
-
-
 
 .team-image {
   padding: 0.5em;
@@ -83,51 +76,55 @@
   width: 20px;
 }
 
+.about-dev p{
+  font-family: "Lato", sans-serif;
+}
+
 @media (max-width: 690px) {
-    .about-title {
-        font-size: 4vw;
-    }
-    
-    .about-dev {
-        width: 25%;
-        font-size: 2vh;
-    }
-    
-    .about-dev h1 {
-        font-size: 2vh;
-    }
-    
-    .team-image {
-        max-height: 150px; 
-        width: auto; 
-    }
-    
-    .icon {
-        width: 3.75vh;
-    }
+  .about-title {
+    font-size: 4vw;
+  }
+
+  .about-dev {
+    width: 25%;
+    font-size: 2vh;
+  }
+
+  .about-dev h1 {
+    font-size: 2vh;
+  }
+
+  .team-image {
+    max-height: 150px;
+    width: auto;
+  }
+
+  .icon {
+    width: 3.75vh;
+  }
 }
 
 @media (max-width: 400px) {
-    .about-title {
-        font-size: 4vw;
-    }
-    
-    .about-dev {
-        width: 25%;
-        font-size: 2vh;
-    }
-    
-    .about-dev h1 {
-        font-size: 2vh;
-    }
-    
-    .team-image {
-        max-height: 80px; 
-        width: auto; 
-    }
-    
-    .icon {
-        width: 3.75vh;
-    }
-     
+  .about-title {
+    font-size: 4vw;
+  }
+
+  .about-dev {
+    width: 100vw;
+    padding: 0;
+    border: none;
+  }
+
+  .about-dev h1 {
+    font-size: 2vh;
+  }
+
+  .team-image {
+    max-height: 80px;
+    width: auto;
+  }
+
+  .icon {
+    width: 3.75vh;
+  }
 }

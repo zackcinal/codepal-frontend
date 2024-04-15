@@ -28,3 +28,9 @@
     gap: 10px;
     flex-wrap: wrap;
 }
+
+@media (max-width: 430px){
+    .following-individual{
+        width: 90vw;
+    }
+}

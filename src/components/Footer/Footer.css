@@ -97,3 +97,13 @@
 .logo {
   width: 50px;
 }
+
+@media (max-width: 430px){
+  .contact-us-container div{
+    display: none;
+  }
+
+  .footerMainPage{
+    height: 31vh;
+  }
+}

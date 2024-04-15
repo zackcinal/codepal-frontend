@@ -111,10 +111,7 @@ function AboutUs() {
                   src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/quote-left-icon.png"
                 />
               </a>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-              voluptatem eos deserunt rerum quas vel blanditiis quod praesentium
-              nam harum quaerat fuga ratione perspiciatis totam excepturi eaque
-              cupiditate, et ipsa.
+              Hello! I'm Zack. Thank you for visiting our website. I hope you can find a developer who can create a website that meets your expectations. If you're a developer, happy coding!
               <a>
                 <img
                   className="paragraph"

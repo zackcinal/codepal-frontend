@@ -8,11 +8,10 @@ function AboutUs() {
   return (
     <section className="about-section">
       <div className="about-container">
-        <div>
+        <div className="about-in">
           <h1 className="about-title">𝓬𝓸𝓭𝓮.𝓹𝓪𝓵 𝓭𝓮𝓿𝓮𝓵𝓸𝓹𝓮𝓻</h1>
         </div>
 
-        
         <div classname="devContainer">
           <div className="about-dev">
             <img className="team-image" src={abdul} alt="developer" />
@@ -111,7 +110,9 @@ function AboutUs() {
                   src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/quote-left-icon.png"
                 />
               </a>
-              Hello! I'm Zack. Thank you for visiting our website. I hope you can find a developer who can create a website that meets your expectations. If you're a developer, happy coding!
+              Hello! I'm Zack. Thank you for visiting our website. I hope you
+              can find a developer who can create a website that meets your
+              expectations. If you're a developer, happy coding!
               <a>
                 <img
                   className="paragraph"
@@ -164,30 +165,28 @@ function AboutUs() {
             </p>
 
             <div className="iconMainContainer">
-
-            <div className="about-icon">
-              <p>
-                <a href="https://github.com/CIparrea">
-                  <img
-                    className="icon"
-                    src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-icon.png"
-                  />
-                </a>
-              </p>
-              <p>
-                <a href="https://www.linkedin.com/in/cesariparrea/">
-                  <img
-                    className="icon"
-                    src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/linkedin-app-icon.png"
-                  />
-                </a>
-              </p>
-            </div>
+              <div className="about-icon">
+                <p>
+                  <a href="https://github.com/CIparrea">
+                    <img
+                      className="icon"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-icon.png"
+                    />
+                  </a>
+                </p>
+                <p>
+                  <a href="https://www.linkedin.com/in/cesariparrea/">
+                    <img
+                      className="icon"
+                      src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/linkedin-app-icon.png"
+                    />
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      
     </section>
   );
 }

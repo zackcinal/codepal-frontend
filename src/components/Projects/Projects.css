@@ -41,3 +41,16 @@
   font-family: "Lato", sans-serif;
   font-weight: 300;
 }
+
+@media (max-width: 430px){
+  .project-item{
+    flex-direction: column;
+    width: 90vw;
+    margin-left: -10vw;
+  }
+
+  .react-tabs__tab{
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

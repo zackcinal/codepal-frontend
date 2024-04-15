@@ -102,13 +102,11 @@ function EditUser({ user, profile, setUser, setProfile }) {
     }
   };
 
-    
-    
   const handleDeleteUser = async () => {
     if (window.confirm("Are you sure you want to delete your profile?")) {
       try {
         await deleteUser(user.id);
-        await signOut()
+        await signOut();
         // Redirect or show success message
         setUser(null);
         setProfile(null);
@@ -120,14 +118,16 @@ function EditUser({ user, profile, setUser, setProfile }) {
     }
   };
 
-
   return (
     <div className="editUserContainer">
       {/* <Navbar /> */}
       <div className="editUserFormContainer">
-        
         <h1 className="editUserHeader">Edit User</h1>
-        <img className="editUserImage" src={`http://127.0.0.1:8000${profile.profile_picture}`} alt="Profile Picture" />
+        <img
+          className="editUserImage"
+          src={`http://127.0.0.1:8000${profile.profile_picture}`}
+          alt="Profile Picture"
+        />
         <form className="editUserForm" onSubmit={handleSubmit}>
           {/* <input
             type="text"
@@ -165,9 +165,7 @@ function EditUser({ user, profile, setUser, setProfile }) {
             autoComplete="off"
             className="editUserInput"
           /> */}
-          
-          
-          
+
           <input
             id="fileInput"
             type="file"
@@ -228,12 +226,10 @@ function EditUser({ user, profile, setUser, setProfile }) {
           </div>
           {renderError()}
         </form>
+        <button className="deleteButton" onClick={handleDeleteUser}>
+          Delete Profile
+        </button>
       </div>
-
-      <div>
-          <button className="deleteButton" onClick={handleDeleteUser}>Delete Profile</button>
-        </div>
-
     </div>
   );
 }

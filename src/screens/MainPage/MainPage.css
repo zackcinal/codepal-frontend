@@ -1,6 +1,6 @@
 .profilesContainer {
   height: 70vh;
-  width: 100vw; /* Adjust this width as needed */
+  width: 98vw; /* Adjust this width as needed */
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
@@ -8,7 +8,6 @@
   flex-wrap: wrap;
   overflow: auto; /* Changed to auto for better handling of overflow */
   padding: 10px; /* Add padding as needed */
-  margin-left: 10vw;
 }
 
 .mainPageContainer {
@@ -35,6 +34,7 @@ ul.mainPageOptions {
   justify-content: center;
   font-family: "Lato", sans-serif;
   font-weight: 900;
+  width: 95vw;
 }
 
 .react-tabs__tab {

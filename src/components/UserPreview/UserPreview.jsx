@@ -100,9 +100,9 @@ function UserPreview({ profile, myProfile, isFollowed, checkIfFollowed }) {
         onRequestClose={handleCloseModal}
         contentLabel="Add Review Modal"
       >
-        <button className="profileCardFollowBtn" onClick={handleCloseModal}>Close</button>
+        <button className="profileCardCloseBtn" onClick={handleCloseModal}>Close</button>
         <div className="reviewModal">
-          <h2>Add Review</h2>
+          <h2 className="add-review-button">Add Review</h2>
           <form onSubmit={handleSubmitReview}>
             <textarea
               value={reviewContent}

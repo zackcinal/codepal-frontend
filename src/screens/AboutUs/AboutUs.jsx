@@ -12,7 +12,7 @@ function AboutUs() {
           <h1 className="about-title">𝓬𝓸𝓭𝓮.𝓹𝓪𝓵 𝓭𝓮𝓿𝓮𝓵𝓸𝓹𝓮𝓻</h1>
         </div>
 
-        <div classname="devContainer">
+        <div className="devContainer">
           <div className="about-dev">
             <img className="team-image" src={abdul} alt="developer" />
             <h3>Abdul Rehman</h3>

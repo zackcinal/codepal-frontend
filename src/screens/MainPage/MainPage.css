@@ -2,7 +2,7 @@
   height: 70vh;
   width: 98vw; /* Adjust this width as needed */
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: row;
   align-items: flex-start;
   flex-wrap: wrap;

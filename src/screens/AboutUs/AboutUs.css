@@ -87,6 +87,12 @@
   flex-wrap: wrap;
   row-gap: 20vh;
 }
+
+.devContainer{
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20vh;
+}
 .about-in {
   display: flex;
   gap: 5vw;

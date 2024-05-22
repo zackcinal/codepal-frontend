@@ -7,7 +7,7 @@ function Following({ following }) {
         return (
           <div className="following-individual">
             <img
-              src={"https://codepalga.s3.amazonaws.com/" + follow.profile_picture}
+              src={follow.profile_picture}
               alt="User Description"
               className="following-img"
             />

@@ -125,7 +125,7 @@ function EditUser({ user, profile, setUser, setProfile }) {
         <h1 className="editUserHeader">Edit User</h1>
         <img
           className="editUserImage"
-          src={`http://127.0.0.1:8000${profile.profile_picture}`}
+          src={`https://codepalga.s3.amazonaws.com/${profile.profile_picture}`}
           alt="Profile Picture"
         />
         <form className="editUserForm" onSubmit={handleSubmit}>

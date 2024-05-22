@@ -8,10 +8,10 @@ const getToken = () => {
 };
 
 const api = axios.create({
-  baseURL: "http://127.0.0.1:8000/"
-    // process.env.NODE_ENV === "production"
-    //   ? "https://codepalga-5698f11ed231.herokuapp.com/"
-    //   : "http://127.0.0.1:8000/",
+  baseURL:
+    process.env.NODE_ENV === "production"
+      ? "https://codepalga-5698f11ed231.herokuapp.com/"
+      : "http://127.0.0.1:8000/",
 });
 
 api.interceptors.request.use(

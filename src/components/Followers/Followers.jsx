@@ -7,7 +7,7 @@ function Followers({ followers }) {
         return (
           <div className="follower-individual">
             <img
-              src={"http://127.0.0.1:8000/" + follow.profile_picture}
+              src={"https://codepalga.s3.amazonaws.com/" + follow.profile_picture}
               alt="User Description"
               className="follower-img"
             />
